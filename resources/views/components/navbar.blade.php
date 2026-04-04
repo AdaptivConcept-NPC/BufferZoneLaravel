@@ -1,25 +1,33 @@
-<nav class="bg-white shadow-md sticky top-0 z-50">
+<nav class="bg-white sticky top-0 z-50 navbar-sticky" id="navbar">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center h-16">
+        <div class="flex justify-between items-center py-4">
             <!-- Logo -->
             <div class="flex-shrink-0">
-                <a href="/" class="text-2xl font-bold" style="color: #213340;">
-                    Buffer Zone
+                <a href="/" class="flex items-center gap-3 no-underline">
+                    <img src="/images/logo-tr.png" alt="Buffer Zone EMS" style="height: 3.5rem; width: auto;">
+                    <div class="flex flex-col justify-center leading-tight" style="gap: 4px;">
+                        <span style="font-family: Montserrat, sans-serif; font-weight: 900; color: #213340; font-size: 1.5rem; letter-spacing: -0.02em;">
+                            Buffer Zone EMS
+                        </span>
+                        <div style="font-family: Montserrat, sans-serif; font-weight: 700; font-size: 0.5rem; letter-spacing: 0.25em; color: #D31111;">
+                            PARAMEDICS | EVENTS | TRAINING
+                        </div>
+                    </div>
                 </a>
             </div>
 
             <!-- Menu -->
             <div class="hidden md:block">
-                <div class="ml-10 flex items-baseline space-x-4">
-                    <a href="/" class="text-gray-700 hover:text-blue-900 px-3 py-2 rounded-md text-sm font-medium">Home</a>
-                    <a href="/about" class="text-gray-700 hover:text-blue-900 px-3 py-2 rounded-md text-sm font-medium">About</a>
-                    <a href="/team" class="text-gray-700 hover:text-blue-900 px-3 py-2 rounded-md text-sm font-medium">Team</a>
+                <div class="ml-10 flex items-baseline space-x-6">
+                    <a href="/" class="text-gray-700 hover:text-red-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 nav-link" data-id="home">Home</a>
+                    <a href="/about" class="text-gray-700 hover:text-red-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 nav-link" data-id="about">About</a>
+                    <a href="/team" class="text-gray-700 hover:text-red-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 nav-link" data-id="team">Team</a>
                     
                     <div class="relative group">
-                        <button class="text-gray-700 hover:text-blue-900 px-3 py-2 rounded-md text-sm font-medium">
+                        <button class="text-gray-700 hover:text-red-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">
                             Services
                         </button>
-                        <div class="hidden group-hover:block absolute left-0 mt-0 w-48 bg-white rounded-md shadow-lg">
+                        <div class="hidden group-hover:block absolute left-0 mt-0 w-48 bg-white rounded-md shadow-lg z-10">
                             <a href="/services/medical-cover" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Medical Cover</a>
                             <a href="/services/training" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Training</a>
                             <a href="/services/staffing" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Staffing</a>
@@ -28,10 +36,10 @@
                     </div>
                     
                     <div class="relative group">
-                        <button class="text-gray-700 hover:text-blue-900 px-3 py-2 rounded-md text-sm font-medium">
+                        <button class="text-gray-700 hover:text-red-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">
                             Events
                         </button>
-                        <div class="hidden group-hover:block absolute left-0 mt-0 w-48 bg-white rounded-md shadow-lg">
+                        <div class="hidden group-hover:block absolute left-0 mt-0 w-48 bg-white rounded-md shadow-lg z-10">
                             <a href="/events/sports" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sports Events</a>
                             <a href="/events/concerts" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Concerts</a>
                             <a href="/events/corporate" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Corporate Events</a>
@@ -39,39 +47,135 @@
                         </div>
                     </div>
                     
-                    <a href="/careers" class="text-gray-700 hover:text-blue-900 px-3 py-2 rounded-md text-sm font-medium">Careers</a>
-                    <a href="/partners" class="text-gray-700 hover:text-blue-900 px-3 py-2 rounded-md text-sm font-medium">Partners</a>
-                    <a href="/#contact" class="btn-emergency text-white px-4 py-2 rounded">Contact</a>
-                    <a href="/admin/login" class="text-gray-700 hover:text-blue-900 px-3 py-2 rounded-md text-sm font-medium">Admin</a>
+                    <a href="/careers" class="text-gray-700 hover:text-red-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 nav-link" data-id="careers">Careers</a>
+                    <a href="/partners" class="text-gray-700 hover:text-red-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 nav-link" data-id="partners">Partners</a>
+                    <a href="/admin/login" class="text-gray-700 hover:text-red-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">Admin</a>
                 </div>
             </div>
 
-            <!-- Mobile menu button -->
-            <div class="md:hidden">
-                <button id="mobile-menu-btn" class="text-gray-700 hover:text-blue-900">
-                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
+            <!-- Right Actions -->
+            <div class="flex items-center gap-3">
+                <!-- Phone CTA with Pulse -->
+                <div class="cta-pulse-wrapper hidden sm:inline-flex">
+                    <a href="tel:+27872655820" class="btn-emergency flex items-center gap-2 px-4 py-2 text-sm" style="position: relative;">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                        <span>087 265 5820</span>
+                    </a>
+                </div>
+
+                <!-- WhatsApp Button -->
+                <a href="https://wa.me/27733503114" target="_blank" rel="noopener noreferrer" class="hidden sm:flex items-center justify-center p-2 rounded-xl transition-all hover:scale-105" style="background: #25D366; box-shadow: 0 4px 12px rgba(37, 211, 102, 0.25);" title="WhatsApp Us">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.272-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-4.971 1.26l-.36.214-3.696-1.05.967 3.554-.235.374a9.847 9.847 0 001.152 5.678c2.255 3.944 6.694 5.532 11.046 5.053-1.063 1.318-2.73 2.1-4.597 2.1-1.378 0-2.692-.35-3.811-.963l-2.768.772 1.081-3.637a9.85 9.85 0 01-1.5-5.342c0-5.437 4.424-9.85 9.85-9.85 2.635 0 5.136.996 7.04 2.808.697.607 1.324 1.287 1.859 2.023.535.736.941 1.526 1.221 2.34.28.814.434 1.669.434 2.54 0 5.436-4.424 9.85-9.85 9.85z"/></svg>
+                </a>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-red-600 p-2 rounded-lg">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
             </div>
         </div>
     </div>
 
     <!-- Mobile menu -->
-    <div id="mobile-menu" class="hidden md:hidden bg-white">
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
         <a href="/" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Home</a>
         <a href="/about" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">About</a>
         <a href="/team" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Team</a>
+        <div class="border-t border-gray-200">
+            <button class="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 toggle-submenu" data-menu="services">Services</button>
+            <div id="services-submenu" class="hidden bg-gray-50">
+                <a href="/services/medical-cover" class="block px-8 py-2 text-gray-700 hover:bg-gray-100 text-sm">Medical Cover</a>
+                <a href="/services/training" class="block px-8 py-2 text-gray-700 hover:bg-gray-100 text-sm">Training</a>
+                <a href="/services/staffing" class="block px-8 py-2 text-gray-700 hover:bg-gray-100 text-sm">Staffing</a>
+                <a href="/services/corporate" class="block px-8 py-2 text-gray-700 hover:bg-gray-100 text-sm">Corporate Packages</a>
+            </div>
+        </div>
+        <div class="border-t border-gray-200">
+            <button class="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 toggle-submenu" data-menu="events">Events</button>
+            <div id="events-submenu" class="hidden bg-gray-50">
+                <a href="/events/sports" class="block px-8 py-2 text-gray-700 hover:bg-gray-100 text-sm">Sports Events</a>
+                <a href="/events/concerts" class="block px-8 py-2 text-gray-700 hover:bg-gray-100 text-sm">Concerts</a>
+                <a href="/events/corporate" class="block px-8 py-2 text-gray-700 hover:bg-gray-100 text-sm">Corporate Events</a>
+                <a href="/events/community" class="block px-8 py-2 text-gray-700 hover:bg-gray-100 text-sm">Community Events</a>
+            </div>
+        </div>
         <a href="/careers" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Careers</a>
         <a href="/partners" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Partners</a>
-        <a href="/#contact" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Contact</a>
         <a href="/admin/login" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Admin</a>
+        <div class="border-t border-gray-200 p-4 flex gap-2">
+            <div class="cta-pulse-wrapper flex-1">
+                <a href="tel:+27872655820" class="btn-emergency w-full text-center flex items-center justify-center gap-2 px-4 py-2 text-sm">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                    <span>Call</span>
+                </a>
+            </div>
+            <a href="https://wa.me/27733503114" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center p-2 rounded-xl transition-all hover:scale-105" style="background: #25D366; box-shadow: 0 4px 12px rgba(37, 211, 102, 0.25);">
+                <svg class="w-5 h-5" fill="white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.272-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-4.971 1.26l-.36.214-3.696-1.05.967 3.554-.235.374a9.847 9.847 0 001.152 5.678c2.255 3.944 6.694 5.532 11.046 5.053-1.063 1.318-2.73 2.1-4.597 2.1-1.378 0-2.692-.35-3.811-.963l-2.768.772 1.081-3.637a9.85 9.85 0 01-1.5-5.342c0-5.437 4.424-9.85 9.85-9.85 2.635 0 5.136.996 7.04 2.808.697.607 1.324 1.287 1.859 2.023.535.736.941 1.526 1.221 2.34.28.814.434 1.669.434 2.54 0 5.436-4.424 9.85-9.85 9.85z"/></svg>
+            </a>
+        </div>
     </div>
 
     <script>
+        // Mobile menu toggle
         document.getElementById('mobile-menu-btn').addEventListener('click', function() {
             const menu = document.getElementById('mobile-menu');
             menu.classList.toggle('hidden');
         });
+
+        // Mobile submenu toggle
+        document.querySelectorAll('.toggle-submenu').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const menuId = this.getAttribute('data-menu') + '-submenu';
+                const submenu = document.getElementById(menuId);
+                submenu.classList.toggle('hidden');
+            });
+        });
+
+        // Scroll detection for navbar shadow
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 20) {
+                navbar.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
+            } else {
+                navbar.style.boxShadow = 'none';
+            }
+        });
+
+        // Active link detection for home page sections
+        const isHomePage = window.location.pathname === '/';
+        if (isHomePage) {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sectionIds = Array.from(navLinks).map(link => link.getAttribute('data-id'));
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => {
+                            link.style.color = '#333';
+                            link.style.fontWeight = '500';
+                            link.style.borderBottom = 'none';
+                        });
+                        const activeLink = document.querySelector(`[data-id="${entry.target.id}"]`);
+                        if (activeLink) {
+                            activeLink.style.color = '#D31111';
+                            activeLink.style.fontWeight = '700';
+                            activeLink.style.borderBottom = '3px solid #D31111';
+                        }
+                    }
+                });
+            }, {
+                rootMargin: '-10% 0px -60% 0px',
+                threshold: 0
+            });
+
+            sectionIds.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) observer.observe(el);
+            });
+        }
     </script>
 </nav>

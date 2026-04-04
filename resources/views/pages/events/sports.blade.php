@@ -21,7 +21,9 @@
                     <p class="text-gray-700">We focus on head injury assessment (HIA), heat exhaustion management, and trauma response to ensure athlete safety is never compromised.</p>
                 </div>
 
-                <a href="/#contact" class="btn-emergency text-white px-6 py-3 rounded mt-8 inline-block">Book Sports Coverage</a>
+                <div class="cta-pulse-wrapper">
+                    <a href="/#contact" class="btn-emergency text-white px-6 py-3 rounded mt-8 inline-block" style="position: relative;">Book Sports Coverage</a>
+                </div>
             </div>
             <div class="bg-soft-grey rounded-lg h-80 flex items-center justify-center">
                 <p class="text-gray-500">Sports Event Medical Placeholder</p>

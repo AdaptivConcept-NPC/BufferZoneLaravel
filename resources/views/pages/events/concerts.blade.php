@@ -21,7 +21,9 @@
                     <p class="text-gray-700">We employ golf-cart ambulances and motorcycle medics to navigate crowded festival grounds quickly during emergencies.</p>
                 </div>
 
-                <a href="/#contact" class="btn-emergency text-white px-6 py-3 rounded mt-8 inline-block">Book Festival Coverage</a>
+                <div class="cta-pulse-wrapper">
+                    <a href="/#contact" class="btn-emergency text-white px-6 py-3 rounded mt-8 inline-block" style="position: relative;">Book Festival Coverage</a>
+                </div>
             </div>
             <div class="bg-soft-grey rounded-lg h-80 flex items-center justify-center">
                 <p class="text-gray-500">Festival Medical Tent Placeholder</p>

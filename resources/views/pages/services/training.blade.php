@@ -16,21 +16,27 @@
                 <div class="text-3xl font-bold mb-2" style="color: #D31111;">1 Day</div>
                 <h3 class="text-2xl font-bold mb-4" style="color: #213340;">Basic Life Support (BLS)</h3>
                 <p class="text-gray-700 mb-6">CPR and first aid essentials for everyone.</p>
-                <a href="/#contact" class="btn-emergency text-white px-4 py-2 rounded inline-block">Enroll Now</a>
+                <div class="cta-pulse-wrapper">
+                    <a href="/#contact" class="btn-emergency text-white px-4 py-2 rounded inline-block" style="position: relative;">Enroll Now</a>
+                </div>
             </div>
 
             <div class="info-card">
                 <div class="text-3xl font-bold mb-2" style="color: #D31111;">3 Days</div>
                 <h3 class="text-2xl font-bold mb-4" style="color: #213340;">Advanced Life Support (ALS)</h3>
                 <p class="text-gray-700 mb-6">Advanced emergency care for medical professionals.</p>
-                <a href="/#contact" class="btn-emergency text-white px-4 py-2 rounded inline-block">Enroll Now</a>
+                <div class="cta-pulse-wrapper">
+                    <a href="/#contact" class="btn-emergency text-white px-4 py-2 rounded inline-block" style="position: relative;">Enroll Now</a>
+                </div>
             </div>
 
             <div class="info-card">
                 <div class="text-3xl font-bold mb-2" style="color: #D31111;">2 Days</div>
                 <h3 class="text-2xl font-bold mb-4" style="color: #213340;">First Aid Level 1 & 2</h3>
                 <p class="text-gray-700 mb-6">Certified first aid training for corporate teams.</p>
-                <a href="/#contact" class="btn-emergency text-white px-4 py-2 rounded inline-block">Enroll Now</a>
+                <div class="cta-pulse-wrapper">
+                    <a href="/#contact" class="btn-emergency text-white px-4 py-2 rounded inline-block" style="position: relative;">Enroll Now</a>
+                </div>
             </div>
         </div>
     </div>

@@ -29,7 +29,10 @@
                     </li>
                 </ul>
                 <div class="py-4 border-t">
-                    <p class="text-gray-600 text-sm">Price: <span class="font-bold" style="color: #213340;">Contact</span></p>
+                    <p class="text-gray-600 text-sm mb-4">Price: <span class="font-bold" style="color: #213340;">Contact</span></p>
+                    <div class="cta-pulse-wrapper">
+                        <a href="/#contact" class="btn-emergency text-white px-6 py-2 rounded block text-center w-full" style="position: relative;">Request Quote</a>
+                    </div>
                 </div>
             </div>
 
@@ -50,7 +53,10 @@
                     </li>
                 </ul>
                 <div class="py-4 border-t">
-                    <p class="text-gray-600 text-sm">Price: <span class="font-bold" style="color: #213340;">Contact</span></p>
+                    <p class="text-gray-600 text-sm mb-4">Price: <span class="font-bold" style="color: #213340;">Contact</span></p>
+                    <div class="cta-pulse-wrapper">
+                        <a href="/#contact" class="btn-emergency text-white px-6 py-2 rounded block text-center w-full" style="position: relative;">Request Quote</a>
+                    </div>
                 </div>
             </div>
 
@@ -71,7 +77,10 @@
                     </li>
                 </ul>
                 <div class="py-4 border-t">
-                    <p class="text-gray-600 text-sm">Price: <span class="font-bold" style="color: #213340;">Contact</span></p>
+                    <p class="text-gray-600 text-sm mb-4">Price: <span class="font-bold" style="color: #213340;">Contact</span></p>
+                    <div class="cta-pulse-wrapper">
+                        <a href="/#contact" class="btn-emergency text-white px-6 py-2 rounded block text-center w-full" style="position: relative;">Request Quote</a>
+                    </div>
                 </div>
             </div>
         </div>

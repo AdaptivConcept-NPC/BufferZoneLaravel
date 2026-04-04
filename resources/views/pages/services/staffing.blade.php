@@ -15,19 +15,25 @@
             <div class="info-card border-t-4" style="border-top-color: #D31111;">
                 <h3 class="text-2xl font-bold mb-4" style="color: #213340;">ALS Paramedics</h3>
                 <p class="text-gray-700 mb-6">Experienced advanced life support providers for critical care.</p>
-                <a href="/#contact" class="btn-outline-navy px-4 py-2 rounded text-sm font-semibold">Request Staff</a>
+                <div class="cta-pulse-wrapper">
+                    <a href="/#contact" class="btn-emergency text-white px-4 py-2 rounded text-sm font-semibold" style="position: relative;">Request Staff</a>
+                </div>
             </div>
 
             <div class="info-card border-t-4" style="border-top-color: #D31111;">
                 <h3 class="text-2xl font-bold mb-4" style="color: #213340;">BLS Medics</h3>
                 <p class="text-gray-700 mb-6">Basic life support personnel for event monitoring.</p>
-                <a href="/#contact" class="btn-outline-navy px-4 py-2 rounded text-sm font-semibold">Request Staff</a>
+                <div class="cta-pulse-wrapper">
+                    <a href="/#contact" class="btn-emergency text-white px-4 py-2 rounded text-sm font-semibold" style="position: relative;\">Request Staff</a>
+                </div>
             </div>
 
             <div class="info-card border-t-4" style="border-top-color: #D31111;">
                 <h3 class="text-2xl font-bold mb-4" style="color: #213340;">Trauma Nurses</h3>
                 <p class="text-gray-700 mb-6">Skilled clinical nurses for on-site medical tents.</p>
-                <a href="/#contact" class="btn-outline-navy px-4 py-2 rounded text-sm font-semibold">Request Staff</a>
+                <div class="cta-pulse-wrapper">
+                    <a href="/#contact" class="btn-emergency text-white px-4 py-2 rounded text-sm font-semibold\" style="position: relative;\">Request Staff</a>
+                </div>
             </div>
         </div>
     </div>

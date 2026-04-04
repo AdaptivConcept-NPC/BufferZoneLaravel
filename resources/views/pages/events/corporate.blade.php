@@ -21,7 +21,9 @@
                     <p class="text-gray-700">We provide rapid assessment for sudden illness or medical emergencies during high-profile business functions.</p>
                 </div>
 
-                <a href="/#contact" class="btn-emergency text-white px-6 py-3 rounded mt-8 inline-block">Book Corporate Coverage</a>
+                <div class="cta-pulse-wrapper">
+                    <a href="/#contact" class="btn-emergency text-white px-6 py-3 rounded mt-8 inline-block" style="position: relative;">Book Corporate Coverage</a>
+                </div>
             </div>
             <div class="bg-soft-grey rounded-lg h-80 flex items-center justify-center">
                 <p class="text-gray-500">Corporate Event Medical Placeholder</p>

@@ -4,7 +4,7 @@
 
 @section('content')
 <!-- Hero Section -->
-<section class="relative py-32 text-white" style="background-image: url('/images/IMG-20260314-WA0017.jpg'); background-size: cover; background-position: center; min-height: 600px;">
+<section id="home" class="relative py-32 text-white" style="background-image: url('/images/IMG-20260314-WA0017.jpg'); background-size: cover; background-position: center; min-height: 600px;">
     <div class="absolute inset-0" style="background: linear-gradient(to right, rgba(33,51,64,0.88) 50%, rgba(33,51,64,0.4));"></div>
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-center" style="min-height: 600px;">
         <div class="max-w-2xl">
@@ -12,7 +12,9 @@
             <h1 class="text-6xl font-bold mb-6 leading-tight">Time Saves Lives.<br /><span style="color: #D31111;">Buffer Zone</span> Saves You Both.</h1>
             <p class="text-xl mb-8 opacity-95 leading-relaxed">Professional event medical services tailored to your unique requirements. Qualified Advanced Life Support practitioners on standby — for every event, every time.</p>
             <div class="flex gap-4 flex-wrap">
-                <a href="tel:+27-YOUR-PHONE" class="btn-emergency text-white px-8 py-3 rounded font-semibold">Call Now</a>
+                <div class="cta-pulse-wrapper">
+                    <a href="tel:+27872655820" class="btn-emergency text-white px-8 py-3 rounded font-semibold" style="position: relative;">Call Now</a>
+                </div>
                 <a href="#contact" class="bg-transparent border-2 border-white text-white px-8 py-3 rounded font-semibold hover:bg-white hover:text-gray-900 transition">Book us for your event</a>
             </div>
             <div class="mt-12 grid grid-cols-1 md:grid-cols-4 gap-6">
@@ -38,7 +40,7 @@
 </section>
 
 <!-- Services Section -->
-<section class="py-20 bg-white">
+<section id="services" class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="mb-12 text-center">
             <p class="section-label mb-4">What We Do</p>
@@ -50,26 +52,32 @@
             <div class="info-card">
                 <h3 class="text-2xl font-bold mb-4" style="color: #213340;">Event Medical Services</h3>
                 <p class="text-gray-700 mb-6">Full-scale medical support for events of any size — from community fetes to large-scale concerts and sports fixtures. We provide on-site medical tents, mobile response units, and dedicated triage areas.</p>
-                <a href="/services/medical-cover" class="btn-emergency text-white px-6 py-2 rounded inline-block">Inquire Now</a>
+                <div class="cta-pulse-wrapper">
+                    <a href="/services/medical-cover" class="btn-emergency text-white px-6 py-2 rounded inline-block" style="position: relative;">Inquire Now</a>
+                </div>
             </div>
 
             <div class="info-card">
                 <h3 class="text-2xl font-bold mb-4" style="color: #213340;">Training & Workshops</h3>
                 <p class="text-gray-700 mb-6">Empowering communities and corporates with life-saving skills. Certified First Aid, CPR, and AED training tailored to your team, in a format that works for you.</p>
-                <a href="/services/training" class="btn-emergency text-white px-6 py-2 rounded inline-block">Inquire Now</a>
+                <div class="cta-pulse-wrapper">
+                    <a href="/services/training" class="btn-emergency text-white px-6 py-2 rounded inline-block" style="position: relative;">Inquire Now</a>
+                </div>
             </div>
 
             <div class="info-card">
                 <h3 class="text-2xl font-bold mb-4" style="color: #213340;">Staff Contingent</h3>
                 <p class="text-gray-700 mb-6">Highly qualified medical personnel available for standby duties. We supply ALS, CCA, Dip.EMC, ECT, and ECP practitioners for film sets, long-term site placements, and corporate events.</p>
-                <a href="/services/staffing" class="btn-emergency text-white px-6 py-2 rounded inline-block">Inquire Now</a>
+                <div class="cta-pulse-wrapper">
+                    <a href="/services/staffing" class="btn-emergency text-white px-6 py-2 rounded inline-block" style="position: relative;">Inquire Now</a>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
 <!-- About Section -->
-<section class="py-20 bg-soft-grey">
+<section id="about" class="py-20 bg-soft-grey">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
             <p class="section-label mb-4">Who We Are</p>
@@ -127,8 +135,12 @@
 </section>
 
 <!-- Gallery Component -->
-@livewire('gallery')
+<section id="gallery">
+    @livewire('gallery')
+</section>
 
 <!-- Contact Form Component -->
-@livewire('contact-form')
+<section id="contact">
+    @livewire('contact-form')
+</section>
 @endsection
