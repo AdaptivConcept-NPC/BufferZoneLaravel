@@ -1,12 +1,38 @@
 @extends('layouts.app')
 
-@section('page_title', 'Services - Buffer Zone EMS')
+@section('page_title', 'Training & Workshops - Buffer Zone EMS')
 
 @section('content')
 <section class="py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 class="text-4xl font-bold mb-8" style="color: #213340;">Service Page</h1>
-        <p class="text-gray-700">Service content goes here.</p>
+        <div class="mb-12">
+            <p class="section-label mb-4">Our Services</p>
+            <h1 class="text-5xl font-bold mb-6" style="color: #213340;">Training & Workshops</h1>
+            <p class="text-xl text-gray-600 max-w-2xl">Equipping the next generation of responders with life-saving skills.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="info-card">
+                <div class="text-3xl font-bold mb-2" style="color: #D31111;">1 Day</div>
+                <h3 class="text-2xl font-bold mb-4" style="color: #213340;">Basic Life Support (BLS)</h3>
+                <p class="text-gray-700 mb-6">CPR and first aid essentials for everyone.</p>
+                <a href="/#contact" class="btn-emergency text-white px-4 py-2 rounded inline-block">Enroll Now</a>
+            </div>
+
+            <div class="info-card">
+                <div class="text-3xl font-bold mb-2" style="color: #D31111;">3 Days</div>
+                <h3 class="text-2xl font-bold mb-4" style="color: #213340;">Advanced Life Support (ALS)</h3>
+                <p class="text-gray-700 mb-6">Advanced emergency care for medical professionals.</p>
+                <a href="/#contact" class="btn-emergency text-white px-4 py-2 rounded inline-block">Enroll Now</a>
+            </div>
+
+            <div class="info-card">
+                <div class="text-3xl font-bold mb-2" style="color: #D31111;">2 Days</div>
+                <h3 class="text-2xl font-bold mb-4" style="color: #213340;">First Aid Level 1 & 2</h3>
+                <p class="text-gray-700 mb-6">Certified first aid training for corporate teams.</p>
+                <a href="/#contact" class="btn-emergency text-white px-4 py-2 rounded inline-block">Enroll Now</a>
+            </div>
+        </div>
     </div>
 </section>
 @endsection
