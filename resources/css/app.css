@@ -6,6 +6,198 @@
 @source '../**/*.js';
 
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+  --color-medical-red: #D31111;
+  --color-medical-red-dark: #A80D0D;
+  --color-buffer-zone-blue: #00349a;
+  --color-pro-navy: #213340;
+  --color-pro-navy-light: #2e4a5c;
+  --color-clinical-white: #FFFFFF;
+  --color-soft-grey: #F4F4F4;
+  --color-anchor-grey: #333333;
+  --color-mid-grey: #6B7280;
+  --color-border-grey: #E5E7EB;
+
+  --font-montserrat: 'Montserrat', sans-serif;
+  --font-inter: 'Inter', sans-serif;
+  --font-roboto: 'Roboto', sans-serif;
+
+  --shadow-card: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -1px rgba(0,0,0,0.04);
+  --shadow-card-hover: 0 10px 25px -5px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+  --shadow-navbar: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-clinical-white text-anchor-grey antialiased;
+    font-family: var(--font-inter);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-montserrat);
+  }
+}
+
+/* Utility Classes */
+.btn-emergency {
+  background-color: var(--color-medical-red);
+  color: #fff;
+  font-family: var(--font-montserrat);
+  font-weight: 700;
+  border-radius: 50px;
+  transition: background 0.25s ease, transform 0.15s ease;
+  padding: 0.75rem 1rem;
+}
+.btn-emergency:hover {
+  background-color: var(--color-medical-red-dark);
+  transform: translateY(-1px);
+}
+
+.btn-navy {
+  background-color: var(--color-pro-navy);
+  color: #fff;
+  font-family: var(--font-montserrat);
+  font-weight: 700;
+  border-radius: 50px;
+  transition: background 0.25s ease, transform 0.15s ease;
+  padding: 0.75rem 1rem;
+}
+.btn-navy:hover {
+  background-color: var(--color-pro-navy-light);
+  transform: translateY(-1px);
+}
+
+.btn-outline-navy {
+  border: 2px solid var(--color-pro-navy);
+  color: var(--color-pro-navy);
+  font-family: var(--font-montserrat);
+  font-weight: 700;
+  border-radius: 50px;
+  background: transparent;
+  transition: all 0.25s ease;
+}
+.btn-outline-navy:hover {
+  background: var(--color-pro-navy);
+  color: #fff;
+}
+
+.section-label {
+  font-family: var(--font-montserrat);
+  font-weight: 800;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-medical-red);
+}
+
+.info-card {
+  background: #FFFFFF;
+  border-radius: 12px;
+  padding: 1.75rem;
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--color-border-grey);
+  transition: all 0.3s ease;
+}
+.info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.navbar-sticky {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #fff;
+  box-shadow: var(--shadow-navbar);
+  padding: 24px 0;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(33,51,64,0.88) 50%, rgba(33,51,64,0.4));
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.gallery-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.gallery-img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.section-py {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.red-bar {
+  display: inline-block;
+  width: 3rem;
+  height: 4px;
+  background: var(--color-medical-red);
+  border-radius: 2px;
+  margin-bottom: 1rem;
+}
+
+@keyframes pulse-ring {
+  0%   { transform: scale(1);   opacity: 0.7; }
+  70%  { transform: scale(1.18); opacity: 0; }
+  100% { transform: scale(1.18); opacity: 0; }
+}
+
+@keyframes btn-shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.cta-pulse-wrapper {
+  position: relative;
+  display: inline-flex;
+}
+
+.cta-pulse-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50px;
+  border: 2px solid var(--color-medical-red);
+  animation: pulse-ring 2.4s ease-out infinite;
+  pointer-events: none;
+}
+
+.cta-pulse-wrapper > a {
+  overflow: hidden;
+}
+.cta-pulse-wrapper > a::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255,255,255,0.28) 50%,
+    transparent 60%
+  );
+  background-size: 200% 100%;
+  background-position: -200% center;
+  transition: background-position 0s;
+  pointer-events: none;
+}
+.cta-pulse-wrapper > a:hover::after {
+  animation: btn-shimmer 0.6s ease forwards;
 }
