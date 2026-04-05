@@ -21,7 +21,6 @@
                 <div class="ml-10 flex items-baseline space-x-6">
                     <a href="/" class="text-gray-700 hover:text-red-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 nav-link" data-id="home">Home</a>
                     <a href="/about" class="text-gray-700 hover:text-red-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 nav-link" data-id="about">About</a>
-                    <a href="/team" class="text-gray-700 hover:text-red-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 nav-link" data-id="team">Team</a>
                     
                     <div class="relative group">
                         <button class="text-gray-700 hover:text-red-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">
@@ -46,10 +45,6 @@
                             <a href="/events/community" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Community Events</a>
                         </div>
                     </div>
-                    
-                    <a href="/careers" class="text-gray-700 hover:text-red-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 nav-link" data-id="careers">Careers</a>
-                    <a href="/partners" class="text-gray-700 hover:text-red-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 nav-link" data-id="partners">Partners</a>
-                    <a href="/admin/login" class="text-gray-700 hover:text-red-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">Admin</a>
                 </div>
             </div>
 
@@ -84,7 +79,6 @@
     <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
         <a href="/" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Home</a>
         <a href="/about" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">About</a>
-        <a href="/team" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Team</a>
         <div class="border-t border-gray-200">
             <button class="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 toggle-submenu" data-menu="services">Services</button>
             <div id="services-submenu" class="hidden bg-gray-50">
@@ -103,9 +97,6 @@
                 <a href="/events/community" class="block px-8 py-2 text-gray-700 hover:bg-gray-100 text-sm">Community Events</a>
             </div>
         </div>
-        <a href="/careers" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Careers</a>
-        <a href="/partners" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Partners</a>
-        <a href="/admin/login" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Admin</a>
         <div class="border-t border-gray-200 p-4 flex gap-2">
             <div class="cta-pulse-wrapper flex-1">
                 <a href="tel:+27872655820" class="btn-emergency w-full text-center flex items-center justify-center gap-2 px-4 py-2 text-sm">
