@@ -3,8 +3,8 @@
         <div class="flex justify-between items-center py-4">
             <!-- Logo -->
             <div class="flex-shrink-0">
-                <a href="/" class="flex items-center gap-3 no-underline">
-                    <img src="/images/logo-tr.png" alt="Buffer Zone EMS" style="height: 3.5rem; width: auto;">
+                <a href="{{ url('/') }}" class="flex items-center gap-3 no-underline">
+                    <img src="{{ asset('images/logo-tr.png') }}" alt="Buffer Zone EMS" style="height: 3.5rem; width: auto;">
                     <div class="flex flex-col justify-center leading-tight" style="gap: 4px;">
                         <span style="font-family: Montserrat, sans-serif; font-weight: 900; color: #213340; font-size: 1.5rem; letter-spacing: -0.02em;">
                             Buffer Zone EMS
@@ -19,18 +19,18 @@
             <!-- Menu -->
             <div class="hidden md:block">
                 <div class="ml-10 flex items-baseline space-x-6">
-                    <a href="/" class="text-gray-700 hover:text-red-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 nav-link" data-id="home">Home</a>
-                    <a href="/about" class="text-gray-700 hover:text-red-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 nav-link" data-id="about">About</a>
+                    <a href="{{ url('/') }}" class="text-gray-700 hover:text-red-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 nav-link" data-id="home">Home</a>
+                    <a href="{{ url('/about') }}" class="text-gray-700 hover:text-red-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 nav-link" data-id="about">About</a>
                     
                     <div class="relative group">
                         <button class="text-gray-700 hover:text-red-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">
                             Services
                         </button>
                         <div class="hidden group-hover:block absolute left-0 mt-0 w-48 bg-white rounded-md shadow-lg z-10">
-                            <a href="/services/medical-cover" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Medical Cover</a>
-                            <a href="/services/training" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Training</a>
-                            <a href="/services/staffing" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Staffing</a>
-                            <a href="/services/corporate" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Corporate Packages</a>
+                            <a href="{{ url('/services/medical-cover') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Medical Cover</a>
+                            <a href="{{ url('/services/training') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Training</a>
+                            <a href="{{ url('/services/staffing') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Staffing</a>
+                            <a href="{{ url('/services/corporate') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Corporate Packages</a>
                         </div>
                     </div>
                     
@@ -39,10 +39,10 @@
                             Events
                         </button>
                         <div class="hidden group-hover:block absolute left-0 mt-0 w-48 bg-white rounded-md shadow-lg z-10">
-                            <a href="/events/sports" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sports Events</a>
-                            <a href="/events/concerts" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Concerts</a>
-                            <a href="/events/corporate" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Corporate Events</a>
-                            <a href="/events/community" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Community Events</a>
+                            <a href="{{ url('/events/sports') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sports Events</a>
+                            <a href="{{ url('/events/concerts') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Concerts</a>
+                            <a href="{{ url('/events/corporate') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Corporate Events</a>
+                            <a href="{{ url('/events/community') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Community Events</a>
                         </div>
                     </div>
                 </div>
@@ -77,24 +77,24 @@
 
     <!-- Mobile menu -->
     <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
-        <a href="/" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Home</a>
-        <a href="/about" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">About</a>
+        <a href="{{ url('/') }}" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Home</a>
+        <a href="{{ url('/about') }}" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">About</a>
         <div class="border-t border-gray-200">
             <button class="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 toggle-submenu" data-menu="services">Services</button>
             <div id="services-submenu" class="hidden bg-gray-50">
-                <a href="/services/medical-cover" class="block px-8 py-2 text-gray-700 hover:bg-gray-100 text-sm">Medical Cover</a>
-                <a href="/services/training" class="block px-8 py-2 text-gray-700 hover:bg-gray-100 text-sm">Training</a>
-                <a href="/services/staffing" class="block px-8 py-2 text-gray-700 hover:bg-gray-100 text-sm">Staffing</a>
-                <a href="/services/corporate" class="block px-8 py-2 text-gray-700 hover:bg-gray-100 text-sm">Corporate Packages</a>
+                <a href="{{ url('/services/medical-cover') }}" class="block px-8 py-2 text-gray-700 hover:bg-gray-100 text-sm">Medical Cover</a>
+                <a href="{{ url('/services/training') }}" class="block px-8 py-2 text-gray-700 hover:bg-gray-100 text-sm">Training</a>
+                <a href="{{ url('/services/staffing') }}" class="block px-8 py-2 text-gray-700 hover:bg-gray-100 text-sm">Staffing</a>
+                <a href="{{ url('/services/corporate') }}" class="block px-8 py-2 text-gray-700 hover:bg-gray-100 text-sm">Corporate Packages</a>
             </div>
         </div>
         <div class="border-t border-gray-200">
             <button class="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 toggle-submenu" data-menu="events">Events</button>
             <div id="events-submenu" class="hidden bg-gray-50">
-                <a href="/events/sports" class="block px-8 py-2 text-gray-700 hover:bg-gray-100 text-sm">Sports Events</a>
-                <a href="/events/concerts" class="block px-8 py-2 text-gray-700 hover:bg-gray-100 text-sm">Concerts</a>
-                <a href="/events/corporate" class="block px-8 py-2 text-gray-700 hover:bg-gray-100 text-sm">Corporate Events</a>
-                <a href="/events/community" class="block px-8 py-2 text-gray-700 hover:bg-gray-100 text-sm">Community Events</a>
+                <a href="{{ url('/events/sports') }}" class="block px-8 py-2 text-gray-700 hover:bg-gray-100 text-sm">Sports Events</a>
+                <a href="{{ url('/events/concerts') }}" class="block px-8 py-2 text-gray-700 hover:bg-gray-100 text-sm">Concerts</a>
+                <a href="{{ url('/events/corporate') }}" class="block px-8 py-2 text-gray-700 hover:bg-gray-100 text-sm">Corporate Events</a>
+                <a href="{{ url('/events/community') }}" class="block px-8 py-2 text-gray-700 hover:bg-gray-100 text-sm">Community Events</a>
             </div>
         </div>
         <div class="border-t border-gray-200 p-4 flex gap-2">

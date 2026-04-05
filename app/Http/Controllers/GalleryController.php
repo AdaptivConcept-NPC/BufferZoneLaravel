@@ -27,10 +27,10 @@ class GalleryController extends Controller
         ]);
 
         try {
-            // Store file
+            // Store file directly in public/images
             $file = $request->file('image');
             $filename = 'img_' . time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
-            $path = $file->storeAs('images', $filename, 'public');
+            $file->move(public_path('images'), $filename);
 
             // Create DB record
             $item = GalleryItem::create([
@@ -42,7 +42,7 @@ class GalleryController extends Controller
             return response()->json([
                 'success' => true,
                 'id' => $item->id,
-                'url' => Storage::url('images/' . $filename),
+                'url' => asset('images/' . $filename),
                 'filename' => $filename,
             ], 201);
         } catch (\Exception $e) {

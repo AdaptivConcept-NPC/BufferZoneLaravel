@@ -8,7 +8,7 @@
                 @foreach($items as $item)
                     <div class="rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
                         <img 
-                            src="{{ asset('storage/images/' . $item['filename']) }}" 
+                            src="{{ asset('images/' . $item['filename']) }}" 
                             alt="{{ $item['caption'] ?? 'Gallery Image' }}"
                             class="w-full h-64 object-cover"
                         >

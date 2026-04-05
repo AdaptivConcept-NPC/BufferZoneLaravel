@@ -4,6 +4,32 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\CommandsController; // Admin Commands Routes
+
+Route::middleware('admin')->group(function () {
+    // ... existing routes ...
+
+    // Commands Dashboard
+    Route::get('/admin/commands', [CommandsController::class, 'dashboard'])
+        ->name('admin.commands');
+
+    // Commands API
+    Route::post('/api/admin/commands/execute', [CommandsController::class, 'execute'])
+        ->name('api.admin.commands.execute');
+
+    Route::get('/api/admin/commands/info', [CommandsController::class, 'info'])
+        ->name('api.admin.commands.info');
+});
+
+// TEMPORARY: Remove after running migrations
+// Route::get('/run-migrations', function () {
+//     try {
+//         \Illuminate\Support\Facades\Artisan::call('migrate', ['--force' => true]);
+//         return 'Migrations completed successfully!';
+//     } catch (\Exception $e) {
+//         return 'Error: ' . $e->getMessage();
+//     }
+// });
 
 // Public Routes
 Route::get('/', function () {
