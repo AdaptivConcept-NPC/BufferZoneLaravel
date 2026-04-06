@@ -4,22 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\GalleryController;
-use App\Http\Controllers\CommandsController; // Admin Commands Routes
-
-Route::middleware('admin')->group(function () {
-    // ... existing routes ...
-
-    // Commands Dashboard
-    Route::get('/admin/commands', [CommandsController::class, 'dashboard'])
-        ->name('admin.commands');
-
-    // Commands API
-    Route::post('/api/admin/commands/execute', [CommandsController::class, 'execute'])
-        ->name('api.admin.commands.execute');
-
-    Route::get('/api/admin/commands/info', [CommandsController::class, 'info'])
-        ->name('api.admin.commands.info');
-});
+use App\Http\Controllers\CommandsController;
 
 // TEMPORARY: Remove after running migrations
 // Route::get('/run-migrations', function () {
@@ -110,11 +95,23 @@ Route::post('/api/auth/logout', [AuthController::class, 'logout'])
     ->middleware('admin')
     ->name('api.auth.logout');
 
-// Protected Admin Routes
+// Protected Admin Routes (Single Middleware Group)
 Route::middleware('admin')->group(function () {
+    // Admin Dashboard
     Route::get('/admin/dashboard', function () {
         return view('admin.dashboard');
     })->name('admin.dashboard');
+
+    // Commands Dashboard
+    Route::get('/admin/commands', [CommandsController::class, 'dashboard'])
+        ->name('admin.commands');
+
+    // Commands API
+    Route::post('/api/admin/commands/execute', [CommandsController::class, 'execute'])
+        ->name('api.admin.commands.execute');
+
+    Route::get('/api/admin/commands/info', [CommandsController::class, 'info'])
+        ->name('api.admin.commands.info');
 
     // Contact API Routes
     Route::get('/api/contact/submissions', [ContactController::class, 'submissions'])
