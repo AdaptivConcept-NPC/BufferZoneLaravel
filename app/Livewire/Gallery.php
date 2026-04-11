@@ -8,6 +8,7 @@ use App\Models\GalleryItem;
 class Gallery extends Component
 {
     public $items = [];
+    public $lightbox = null;
 
     public function mount()
     {
