@@ -4,7 +4,7 @@
 
 @section('content')
 <!-- Hero Section -->
-<section id="home" class="relative text-white flex items-center" style="background-image: url('/images/IMG-20260314-WA0017.jpg'); background-size: cover; background-position: center 30%; height: calc(100vh - 80px); min-height: 600px;">
+<section id="home" class="relative text-white flex items-center" style="background-image: url('{{ asset('assets/images/IMG-20260314-WA0017.jpg') }}'); background-size: cover; background-position: center 30%; height: calc(100vh - 80px); min-height: 600px;">
     <div class="absolute inset-0" style="background: linear-gradient(to right, rgba(33,51,64,0.88) 50%, rgba(33,51,64,0.4));"></div>
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div class="max-w-2xl">
