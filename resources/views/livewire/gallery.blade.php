@@ -31,30 +31,48 @@
 
             <!-- Gallery Grid -->
             <div class="gallery-grid">
-                @php
-                    $images = [
-                        'IMG-20260314-WA0001.jpg', 'IMG-20260314-WA0003.jpg', 'IMG-20260314-WA0004.jpg', 
-                        'IMG-20260314-WA0005.jpg', 'IMG-20260314-WA0006.jpg', 'IMG-20260314-WA0007.jpg', 
-                        'IMG-20260314-WA0008.jpg', 'IMG-20260314-WA0009.jpg', 'IMG-20260314-WA0010.jpg', 
-                        'IMG-20260314-WA0011.jpg', 'IMG-20260314-WA0012.jpg', 'IMG-20260314-WA0013.jpg', 
-                        'IMG-20260314-WA0014.jpg', 'IMG-20260314-WA0015.jpg', 'IMG-20260314-WA0016.jpg', 
-                        'IMG-20260314-WA0019.jpg'
-                    ];
-                @endphp
-                
-                @foreach($images as $img)
-                <div 
-                    class="overflow-hidden rounded-xl cursor-pointer" 
-                    wire:click="$set('lightbox', '{{ $img }}')"
-                    style="box-shadow: 0 2px 8px rgba(0,0,0,0.08);"
-                >
-                    <img 
-                        src="{{ asset('assets/images/' . $img) }}" 
-                        alt="BufferZone EMS event" 
-                        class="gallery-img"
-                    />
-                </div>
-                @endforeach
+                @if(count($items) > 0)
+                    {{-- Load from DB --}}
+                    @foreach($items as $item)
+                    <div 
+                        class="overflow-hidden rounded-xl cursor-pointer" 
+                        wire:click="$set('lightbox', '{{ $item['filename'] }}')"
+                        style="box-shadow: 0 2px 8px rgba(0,0,0,0.08);"
+                    >
+                        <img 
+                            src="{{ asset('assets/images/' . $item['filename']) }}" 
+                            alt="{{ $item['caption'] ?? 'BufferZone EMS event' }}" 
+                            class="gallery-img"
+                        />
+                    </div>
+                    @endforeach
+                @else
+                    {{-- Fallback to hardcoded list --}}
+                    @php
+                        $images = [
+                            'IMG-20260314-WA0001.jpg', 'IMG-20260314-WA0003.jpg', 'IMG-20260314-WA0004.jpg', 
+                            'IMG-20260314-WA0005.jpg', 'IMG-20260314-WA0006.jpg', 'IMG-20260314-WA0007.jpg', 
+                            'IMG-20260314-WA0008.jpg', 'IMG-20260314-WA0009.jpg', 'IMG-20260314-WA0010.jpg', 
+                            'IMG-20260314-WA0011.jpg', 'IMG-20260314-WA0012.jpg', 'IMG-20260314-WA0013.jpg', 
+                            'IMG-20260314-WA0014.jpg', 'IMG-20260314-WA0015.jpg', 'IMG-20260314-WA0016.jpg', 
+                            'IMG-20260314-WA0019.jpg'
+                        ];
+                    @endphp
+                    
+                    @foreach($images as $img)
+                    <div 
+                        class="overflow-hidden rounded-xl cursor-pointer" 
+                        wire:click="$set('lightbox', '{{ $img }}')"
+                        style="box-shadow: 0 2px 8px rgba(0,0,0,0.08);"
+                    >
+                        <img 
+                            src="{{ asset('assets/images/' . $img) }}" 
+                            alt="BufferZone EMS event" 
+                            class="gallery-img"
+                        />
+                    </div>
+                    @endforeach
+                @endif
             </div>
         </div>
 

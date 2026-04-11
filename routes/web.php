@@ -95,6 +95,11 @@ Route::post('/api/auth/logout', [AuthController::class, 'logout'])
     ->middleware('admin')
     ->name('api.auth.logout');
 
+// Admin Root Redirect
+Route::get('/admin', function () {
+    return redirect()->route('admin.dashboard');
+});
+
 // Protected Admin Routes (Single Middleware Group)
 Route::middleware('admin')->group(function () {
     // Admin Dashboard
