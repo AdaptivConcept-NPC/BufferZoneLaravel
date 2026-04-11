@@ -39,6 +39,8 @@ class GalleryController extends Controller
                 'sort_order' => GalleryItem::max('sort_order') + 1 ?? 0,
             ]);
 
+            \App\Services\AuditLogger::log('gallery_upload', "Uploaded image: {$item->filename}");
+
             return response()->json([
                 'success' => true,
                 'id' => $item->id,
@@ -68,6 +70,8 @@ class GalleryController extends Controller
             $item = GalleryItem::findOrFail($id);
             $item->update($validated);
 
+            \App\Services\AuditLogger::log('gallery_update', "Updated image metadata: {$item->filename}");
+
             return response()->json([
                 'success' => true,
             ]);
@@ -95,6 +99,8 @@ class GalleryController extends Controller
                 GalleryItem::find($item['id'])->update(['sort_order' => $item['sort_order']]);
             }
 
+            \App\Services\AuditLogger::log('gallery_reorder', "Reordered " . count($validated['order']) . " images");
+
             return response()->json([
                 'success' => true,
             ]);
@@ -119,7 +125,10 @@ class GalleryController extends Controller
             Storage::disk('public')->delete('assets/images/' . $item->filename);
             
             // Delete DB record
+            $filename = $item->filename;
             $item->delete();
+
+            \App\Services\AuditLogger::log('gallery_delete', "Deleted image: $filename");
 
             return response()->json([
                 'success' => true,

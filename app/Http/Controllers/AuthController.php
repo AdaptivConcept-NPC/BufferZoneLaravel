@@ -17,32 +17,23 @@ class AuthController extends Controller
             'password' => 'required|string',
         ]);
 
-        $adminUsername = env('ADMIN_USERNAME');
-        $adminPasswordHash = env('ADMIN_PASSWORD_HASH');
-
-        // Validate credentials
-        if ($validated['username'] !== $adminUsername) {
+        // Attempt login
+        if (!\Illuminate\Support\Facades\Auth::attempt($validated)) {
+            \App\Services\AuditLogger::log('login_failed', "Failed login attempt for username: " . $validated['username']);
+            
             return response()->json([
                 'success' => false,
                 'message' => 'Invalid credentials',
             ], 401);
         }
 
-        // Check password
-        if (!Hash::check($validated['password'], $adminPasswordHash)) {
-            return response()->json([
-                'success' => false,
-                'message' => 'Invalid credentials',
-            ], 401);
-        }
-
-        // Create session
-        $request->session()->put('admin_authenticated', true);
-        $request->session()->put('admin_username', $adminUsername);
+        $user = \Illuminate\Support\Facades\Auth::user();
+        \App\Services\AuditLogger::log('login_success', "User logged in: " . $user->username);
 
         return response()->json([
             'success' => true,
             'message' => 'Login successful',
+            'role' => $user->role,
         ]);
     }
 
@@ -51,10 +42,12 @@ class AuthController extends Controller
      */
     public function verify(Request $request)
     {
-        $isAuthenticated = $request->session()->get('admin_authenticated', false);
-
         return response()->json([
-            'valid' => $isAuthenticated,
+            'valid' => \Illuminate\Support\Facades\Auth::check(),
+            'user' => \Illuminate\Support\Facades\Auth::user() ? [
+                'username' => \Illuminate\Support\Facades\Auth::user()->username,
+                'role' => \Illuminate\Support\Facades\Auth::user()->role,
+            ] : null,
         ]);
     }
 
@@ -63,8 +56,14 @@ class AuthController extends Controller
      */
     public function logout(Request $request)
     {
-        $request->session()->forget('admin_authenticated');
-        $request->session()->forget('admin_username');
+        $user = \Illuminate\Support\Facades\Auth::user();
+        if ($user) {
+            \App\Services\AuditLogger::log('logout', "User logged out: " . $user->username);
+        }
+
+        \Illuminate\Support\Facades\Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
 
         return response()->json([
             'success' => true,

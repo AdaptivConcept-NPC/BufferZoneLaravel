@@ -14,14 +14,22 @@ class User extends Authenticatable
     use HasFactory, Notifiable;
 
     /**
+     * Role Constants
+     */
+    const ROLE_SUPER_ADMIN = 'super-admin';
+    const ROLE_VIEW_ONLY = 'view-only-admin';
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var list<string>
      */
     protected $fillable = [
         'name',
+        'username',
         'email',
         'password',
+        'role',
     ];
 
     /**
@@ -45,5 +53,21 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    /**
+     * Check if user is a super admin
+     */
+    public function isSuperAdmin(): bool
+    {
+        return $this->role === self::ROLE_SUPER_ADMIN;
+    }
+
+    /**
+     * Get user's audit logs
+     */
+    public function auditLogs()
+    {
+        return $this->hasMany(AuditLog::class);
     }
 }

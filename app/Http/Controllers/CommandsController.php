@@ -35,6 +35,8 @@ class CommandsController extends Controller
 
             $output = Artisan::output();
 
+            \App\Services\AuditLogger::log('command_execute', "Executed Artisan command: $command");
+
             return response()->json([
                 'success' => true,
                 'command' => $command,

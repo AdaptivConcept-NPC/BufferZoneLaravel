@@ -111,9 +111,17 @@ Route::middleware('admin')->group(function () {
     Route::get('/admin/commands', [CommandsController::class, 'dashboard'])
         ->name('admin.commands');
 
-    // Commands API
-    Route::post('/api/admin/commands/execute', [CommandsController::class, 'execute'])
-        ->name('api.admin.commands.execute');
+    // System Operations (Require SuperAdmin)
+    Route::middleware('superadmin')->group(function () {
+        Route::post('/api/admin/commands/execute', [CommandsController::class, 'execute'])
+            ->name('api.admin.commands.execute');
+            
+        Route::patch('/api/contact/{id}/read', [ContactController::class, 'markRead'])
+            ->name('api.contact.mark-read');
+        
+        Route::delete('/api/contact/{id}', [ContactController::class, 'destroy'])
+            ->name('api.contact.destroy');
+    });
 
     Route::get('/api/admin/commands/info', [CommandsController::class, 'info'])
         ->name('api.admin.commands.info');
@@ -121,24 +129,20 @@ Route::middleware('admin')->group(function () {
     // Contact API Routes
     Route::get('/api/contact/submissions', [ContactController::class, 'submissions'])
         ->name('api.contact.submissions');
-    
-    Route::patch('/api/contact/{id}/read', [ContactController::class, 'markRead'])
-        ->name('api.contact.mark-read');
-    
-    Route::delete('/api/contact/{id}', [ContactController::class, 'destroy'])
-        ->name('api.contact.destroy');
 
-    // Gallery API Routes
-    Route::post('/api/gallery/upload', [GalleryController::class, 'upload'])
-        ->name('api.gallery.upload');
-    
-    Route::patch('/api/gallery/{id}', [GalleryController::class, 'update'])
-        ->name('api.gallery.update');
-    
-    Route::post('/api/gallery/reorder', [GalleryController::class, 'reorder'])
-        ->name('api.gallery.reorder');
-    
-    Route::delete('/api/gallery/{id}', [GalleryController::class, 'destroy'])
-        ->name('api.gallery.destroy');
+    // Gallery API Routes (Destructive ACTIONS require SuperAdmin)
+    Route::middleware('superadmin')->group(function () {
+        Route::post('/api/gallery/upload', [GalleryController::class, 'upload'])
+            ->name('api.gallery.upload');
+        
+        Route::patch('/api/gallery/{id}', [GalleryController::class, 'update'])
+            ->name('api.gallery.update');
+        
+        Route::post('/api/gallery/reorder', [GalleryController::class, 'reorder'])
+            ->name('api.gallery.reorder');
+        
+        Route::delete('/api/gallery/{id}', [GalleryController::class, 'destroy'])
+            ->name('api.gallery.destroy');
+    });
 });
 

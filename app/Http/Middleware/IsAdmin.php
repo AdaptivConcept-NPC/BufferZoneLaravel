@@ -13,7 +13,7 @@ class IsAdmin
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (!$request->session()->get('admin_authenticated', false)) {
+        if (!auth()->check()) {
             // For API endpoints, return JSON
             if ($request->expectsJson()) {
                 return response()->json([
