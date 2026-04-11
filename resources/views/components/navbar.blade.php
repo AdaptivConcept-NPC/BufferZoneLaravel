@@ -27,10 +27,10 @@
                             Services
                         </button>
                         <div class="hidden group-hover:block absolute left-0 mt-0 w-48 bg-white rounded-md shadow-lg z-10">
-                            <a href="{{ url('/services/medical-cover') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Medical Cover</a>
-                            <a href="{{ url('/services/training') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Training</a>
-                            <a href="{{ url('/services/staffing') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Staffing</a>
-                            <a href="{{ url('/services/corporate') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Corporate Packages</a>
+                            <a href="{{ url('/services/medical-cover') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 shadow-md">Medical Cover</a>
+                            <a href="{{ url('/services/training') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 shadow-md">Training</a>
+                            <a href="{{ url('/services/staffing') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 shadow-md">Staffing</a>
+                            <a href="{{ url('/services/corporate') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 shadow-md">Corporate Packages</a>
                         </div>
                     </div>
                     
@@ -39,10 +39,10 @@
                             Events
                         </button>
                         <div class="hidden group-hover:block absolute left-0 mt-0 w-48 bg-white rounded-md shadow-lg z-10">
-                            <a href="{{ url('/events/sports') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sports Events</a>
-                            <a href="{{ url('/events/concerts') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Concerts</a>
-                            <a href="{{ url('/events/corporate') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Corporate Events</a>
-                            <a href="{{ url('/events/community') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Community Events</a>
+                            <a href="{{ url('/events/sports') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 shadow-md">Sports Events</a>
+                            <a href="{{ url('/events/concerts') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 shadow-md">Concerts</a>
+                            <a href="{{ url('/events/corporate') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 shadow-md">Corporate Events</a>
+                            <a href="{{ url('/events/community') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 shadow-md">Community Events</a>
                         </div>
                     </div>
                 </div>
@@ -77,24 +77,24 @@
 
     <!-- Mobile menu -->
     <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
-        <a href="{{ url('/') }}" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Home</a>
-        <a href="{{ url('/about') }}" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">About</a>
+        <a href="{{ url('/') }}" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 shadow-md">Home</a>
+        <a href="{{ url('/about') }}" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 shadow-md">About</a>
         <div class="border-t border-gray-200">
-            <button class="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 toggle-submenu" data-menu="services">Services</button>
+            <button class="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 shadow-md toggle-submenu" data-menu="services">Services</button>
             <div id="services-submenu" class="hidden bg-gray-50">
-                <a href="{{ url('/services/medical-cover') }}" class="block px-8 py-2 text-gray-700 hover:bg-gray-100 text-sm">Medical Cover</a>
-                <a href="{{ url('/services/training') }}" class="block px-8 py-2 text-gray-700 hover:bg-gray-100 text-sm">Training</a>
-                <a href="{{ url('/services/staffing') }}" class="block px-8 py-2 text-gray-700 hover:bg-gray-100 text-sm">Staffing</a>
-                <a href="{{ url('/services/corporate') }}" class="block px-8 py-2 text-gray-700 hover:bg-gray-100 text-sm">Corporate Packages</a>
+                <a href="{{ url('/services/medical-cover') }}" class="block px-8 py-2 text-gray-700 hover:bg-gray-100 shadow-md text-sm">Medical Cover</a>
+                <a href="{{ url('/services/training') }}" class="block px-8 py-2 text-gray-700 hover:bg-gray-100 shadow-md text-sm">Training</a>
+                <a href="{{ url('/services/staffing') }}" class="block px-8 py-2 text-gray-700 hover:bg-gray-100 shadow-md text-sm">Staffing</a>
+                <a href="{{ url('/services/corporate') }}" class="block px-8 py-2 text-gray-700 hover:bg-gray-100 shadow-md text-sm">Corporate Packages</a>
             </div>
         </div>
         <div class="border-t border-gray-200">
-            <button class="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 toggle-submenu" data-menu="events">Events</button>
+            <button class="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 shadow-md toggle-submenu" data-menu="events">Events</button>
             <div id="events-submenu" class="hidden bg-gray-50">
-                <a href="{{ url('/events/sports') }}" class="block px-8 py-2 text-gray-700 hover:bg-gray-100 text-sm">Sports Events</a>
-                <a href="{{ url('/events/concerts') }}" class="block px-8 py-2 text-gray-700 hover:bg-gray-100 text-sm">Concerts</a>
-                <a href="{{ url('/events/corporate') }}" class="block px-8 py-2 text-gray-700 hover:bg-gray-100 text-sm">Corporate Events</a>
-                <a href="{{ url('/events/community') }}" class="block px-8 py-2 text-gray-700 hover:bg-gray-100 text-sm">Community Events</a>
+                <a href="{{ url('/events/sports') }}" class="block px-8 py-2 text-gray-700 hover:bg-gray-100 shadow-md text-sm">Sports Events</a>
+                <a href="{{ url('/events/concerts') }}" class="block px-8 py-2 text-gray-700 hover:bg-gray-100 shadow-md text-sm">Concerts</a>
+                <a href="{{ url('/events/corporate') }}" class="block px-8 py-2 text-gray-700 hover:bg-gray-100 shadow-md text-sm">Corporate Events</a>
+                <a href="{{ url('/events/community') }}" class="block px-8 py-2 text-gray-700 hover:bg-gray-100 shadow-md text-sm">Community Events</a>
             </div>
         </div>
         <div class="border-t border-gray-200 p-4 flex gap-2">
