@@ -40,7 +40,7 @@
                         style="box-shadow: 0 2px 8px rgba(0,0,0,0.08);"
                     >
                         <img 
-                            src="{{ asset('assets/images/' . $item['filename']) }}" 
+                            src="{{ asset('assets/images/gallery/' . $item['filename']) }}" 
                             alt="{{ $item['caption'] ?? 'BufferZone EMS event' }}" 
                             class="gallery-img"
                         />
@@ -84,7 +84,7 @@
             wire:click="$set('lightbox', null)"
         >
             <img 
-                src="{{ asset('assets/images/' . $lightbox) }}" 
+                src="{{ asset('assets/images/gallery/' . $lightbox) }}" 
                 alt="Gallery full view" 
                 class="max-w-full max-h-[90vh] rounded-2xl" 
                 style="box-shadow: 0 20px 60px rgba(0,0,0,0.5); object-fit: contain;"

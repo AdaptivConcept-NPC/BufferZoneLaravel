@@ -70,7 +70,7 @@ class PageManager extends Component
         $filename = 'gallery_' . time() . '.' . $this->newGalleryImage->getClientOriginalExtension();
         
         // Save to public/assets/images
-        $this->newGalleryImage->storeAs('assets/images', $filename, 'real_public');
+        $this->newGalleryImage->storeAs('assets/images/gallery', $filename, 'real_public');
 
         GalleryItem::create([
             'filename' => $filename,
@@ -86,7 +86,7 @@ class PageManager extends Component
     {
         $item = GalleryItem::find($id);
         if ($item) {
-            $filePath = public_path('assets/images/' . $item->filename);
+            $filePath = public_path('assets/images/gallery/' . $item->filename);
             if (File::exists($filePath)) {
                 File::delete($filePath);
             }

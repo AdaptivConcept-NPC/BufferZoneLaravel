@@ -30,7 +30,7 @@ class GalleryController extends Controller
             // Store file directly in public/images
             $file = $request->file('image');
             $filename = 'img_' . time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
-            $file->move(public_path('assets/images'), $filename);
+            $file->move(public_path('assets/images/gallery'), $filename);
 
             // Create DB record
             $item = GalleryItem::create([
@@ -44,7 +44,7 @@ class GalleryController extends Controller
             return response()->json([
                 'success' => true,
                 'id' => $item->id,
-                'url' => asset('assets/images/' . $filename),
+                'url' => asset('assets/images/gallery/' . $filename),
                 'filename' => $filename,
             ], 201);
         } catch (\Exception $e) {
@@ -122,7 +122,7 @@ class GalleryController extends Controller
             $item = GalleryItem::findOrFail($id);
             
             // Delete file from storage using public_path
-            $filePath = public_path('assets/images/' . $item->filename);
+            $filePath = public_path('assets/images/gallery/' . $item->filename);
             if (\Illuminate\Support\Facades\File::exists($filePath)) {
                 \Illuminate\Support\Facades\File::delete($filePath);
             }

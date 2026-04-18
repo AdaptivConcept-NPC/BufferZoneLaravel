@@ -23,8 +23,9 @@
                     <a href="{{ url('/about') }}" class="text-gray-700 font-medium transition-colors duration-200 nav-link nav-link-animated px-3 py-2 text-sm" data-id="about">About</a>
 
                     <div class="relative group">
-                        <button class="text-gray-700 font-medium transition-colors duration-200 nav-link nav-link-animated px-3 py-2 text-sm" data-id="services">
+                        <button class="text-gray-700 font-medium transition-colors duration-200 nav-link nav-link-animated px-3 py-2 text-sm flex items-center gap-1" data-id="services">
                             Services
+                            <svg class="w-3 h-3 opacity-60 group-hover:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                         </button>
                         <div class="hidden group-hover:block absolute left-0 mt-0 w-48 bg-white rounded-md shadow-lg z-10">
                             <a href="{{ url('/services/medical-cover') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 shadow-md">Event Medical Cover</a>
@@ -35,8 +36,9 @@
                     </div>
 
                     <div class="relative group">
-                        <button class="text-gray-700 font-medium transition-colors duration-200 nav-link-animated px-3 py-2 text-sm">
+                        <button class="text-gray-700 font-medium transition-colors duration-200 nav-link-animated px-3 py-2 text-sm flex items-center gap-1">
                             Events
+                            <svg class="w-3 h-3 opacity-60 group-hover:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                         </button>
                         <div class="hidden group-hover:block absolute left-0 mt-0 w-48 bg-white rounded-md shadow-lg z-10">
                             <a href="{{ url('/events/sports') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 shadow-md">Sports</a>
@@ -52,11 +54,11 @@
             <div class="flex items-center gap-3">
                 <!-- Phone CTA with Pulse -->
                 <div class="cta-pulse-wrapper hidden sm:inline-flex">
-                    <a href="tel:+27872655820" class="btn-emergency flex items-center gap-2 px-4 py-2 text-sm" style="position: relative;">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <a href="tel:+27872655820" class="btn-emergency flex items-center gap-2 px-3 lg:px-5 py-2 whitespace-nowrap" style="position: relative; font-size: clamp(11px, 1.2vw, 14px);">
+                        <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
                         </svg>
-                        <span>087 265 5820</span>
+                        <span class="font-bold tracking-tight">087 265 5820</span>
                     </a>
                 </div>
 

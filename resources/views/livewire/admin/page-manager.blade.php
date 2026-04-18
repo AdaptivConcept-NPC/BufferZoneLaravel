@@ -200,7 +200,7 @@
             <div class="grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-6">
                 @foreach($gallery as $item)
                     <div class="group relative aspect-square rounded-2xl overflow-hidden bg-[#111F2C] border border-[#1E3040] hover:border-[#D31111] transition-all shadow-lg">
-                        <img src="{{ asset('assets/images/' . $item->filename) }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-60 group-hover:opacity-100">
+                        <img src="{{ asset('assets/images/gallery/' . $item->filename) }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-60 group-hover:opacity-100">
                         
                         <!-- Overlay Actions -->
                         <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-5 opacity-0 group-hover:opacity-100 transition-all duration-300">
@@ -208,7 +208,7 @@
                             
                             <div class="flex gap-2">
                                 <button 
-                                    @click="lightbox = true; activeImage = '{{ asset('assets/images/' . $item->filename) }}'; activeCaption = '{{ $item->caption ?: 'Untagged Asset' }}'"
+                                    @click="lightbox = true; activeImage = '{{ asset('assets/images/gallery/' . $item->filename) }}'; activeCaption = '{{ $item->caption ?: 'Untagged Asset' }}'"
                                     class="flex-1 py-2.5 rounded-xl bg-white/10 text-white text-[0.6rem] font-black uppercase hover:bg-white hover:text-black transition-all flex items-center justify-center gap-2"
                                 >
                                     <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0z"/><circle cx="12" cy="12" r="3"/></svg>
