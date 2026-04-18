@@ -17,9 +17,9 @@
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #0D1B22; color: #F5F5F5; }
         .sidebar { background: #0D1B22; border-right: 1px solid #1E3040; min-height: 100vh; position: fixed; width: 260px; z-index: 50; }
-        .main-content { margin-left: 260px; min-height: 100vh; display: flex; flexDirection: column; }
-        .top-navbar { height: 64px; background: #0D1B22; border-bottom: 1px solid #1E3040; display: flex; items-center; padding: 0 2rem; position: sticky; top: 0; z-index: 40; }
-        .nav-link { color: #8BA4B4; text-decoration: none; display: flex; items-center; gap: 0.75rem; padding: 0.8rem 1.25rem; border-radius: 12px; transition: all 0.2s; font-weight: 500; font-size: 0.9rem; }
+        .main-content { margin-left: 260px; min-height: 100vh; display: flex; flex-direction: column; }
+        .top-navbar { height: 64px; background: #0D1B22; border-bottom: 1px solid #1E3040; display: flex; align-items: center; padding: 0 2rem; position: sticky; top: 0; z-index: 40; }
+        .nav-link { color: #8BA4B4; text-decoration: none; display: flex; align-items: center; gap: 0.75rem; padding: 0.8rem 1.25rem; border-radius: 12px; transition: all 0.2s; font-weight: 500; font-size: 0.9rem; }
         .nav-link:hover { background: #111F2C; color: #F5F5F5; }
         .nav-link.active { background: #D31111; color: #fff; font-weight: 700; }
         .badge-count { background: #D31111; color: white; padding: 2px 8px; border-radius: 100px; font-size: 0.7rem; font-weight: 800; }
@@ -49,9 +49,18 @@
                 </a>
                 @endif
 
-                <a href="http://localhost:5172/admin" target="_blank" class="nav-link">
+                <a href="/admin/pages" class="nav-link {{ request()->is('admin/pages') ? 'active' : '' }}">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.375 2.625a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4Z"/></svg>
-                    Professional Portal
+                    Page Manager
+                </a>
+
+                <a href="/admin/contacts" class="nav-link {{ request()->is('admin/contacts') ? 'active' : '' }}">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                    Contact Inbox
+                    @php $unread = \App\Models\ContactSubmission::where('is_read', false)->count(); @endphp
+                    @if($unread > 0)
+                        <span class="badge-count ml-auto">{{ $unread }}</span>
+                    @endif
                 </a>
 
                 <div class="pt-8 text-[0.6rem] px-4 font-bold text-[#4A6070] uppercase tracking-widest mb-2">Support</div>

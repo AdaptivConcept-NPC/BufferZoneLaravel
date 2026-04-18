@@ -4,7 +4,7 @@
   viewBox="0 0 168 32"
   xmlns="http://www.w3.org/2000/svg"
   aria-hidden="true"
-  style="display: block; width: 160px; height: 30px; overflow: visible; flex-shrink: 0; {{ $style }}"
+  style="display: block; width: 160px; height: 30px; overflow: visible; flex-shrink: 0; {{ $style ?? '' }}"
   class="{{ $class }}"
 >
   <polyline

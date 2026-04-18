@@ -111,6 +111,14 @@ Route::middleware('admin')->group(function () {
     Route::get('/admin/commands', [CommandsController::class, 'dashboard'])
         ->name('admin.commands');
 
+    // Page & Content Manager (Legacy "Professional Portal" replacement)
+    Route::get('/admin/pages', \App\Livewire\Admin\PageManager::class)
+        ->name('admin.pages');
+
+    // Contact Manager
+    Route::get('/admin/contacts', \App\Livewire\Admin\ContactManager::class)
+        ->name('admin.contacts');
+
     // System Operations (Require SuperAdmin)
     Route::middleware('superadmin')->group(function () {
         Route::post('/api/admin/commands/execute', [CommandsController::class, 'execute'])
