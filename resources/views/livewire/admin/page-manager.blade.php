@@ -102,47 +102,126 @@
 
     <!-- Gallery Tab -->
     @if($activeTab === 'gallery')
-        <div class="space-y-6">
-            <!-- Upload Section -->
-            <div class="p-8 rounded-2xl border border-[#D3111140] bg-[#D3111105] border-dashed">
-                <div class="flex flex-col items-center justify-center text-center">
-                    <div class="w-12 h-12 rounded-full bg-[#111F2C] border border-[#1E3040] flex items-center justify-center mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D31111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" x2="12" y1="3" y2="15"/></svg>
-                    </div>
-                    <h4 class="text-sm font-bold text-white mb-1">Add New Image</h4>
-                    <p class="text-xs text-[#4A6070] mb-6">PNG, JPG or WEBP (Max 10MB)</p>
-                    
-                    <div class="w-full max-w-md space-y-4">
-                        <input type="file" wire:model="newGalleryImage" class="hidden" id="gallery-upload">
-                        <label for="gallery-upload" class="cursor-pointer block w-full p-4 rounded-xl border border-[#1E3040] bg-[#0D1B22] text-[#8BA4B4] text-sm hover:border-[#D31111] transition-all">
-                            {{ $newGalleryImage ? $newGalleryImage->getClientOriginalName() : 'Click to select image' }}
-                        </label>
-                        
-                        <input type="text" wire:model="galleryCaption" placeholder="Add a caption (optional)" class="w-full bg-[#0D1B22] border border-[#1E3040] rounded-xl p-3 text-sm text-white focus:border-[#D31111] outline-none">
-                        
-                        <button wire:click="uploadGalleryImage" wire:loading.attr="disabled" class="w-full bg-[#D31111] text-white py-3 rounded-xl font-bold shadow-lg hover:bg-[#B00E0E] transition-all disabled:opacity-50">
-                            <span wire:loading.remove>Upload Image</span>
-                            <span wire:loading>Processing...</span>
+        <div x-data="{ 
+            uploadModal: false, 
+            lightbox: false, 
+            activeImage: '',
+            activeCaption: ''
+        }" class="space-y-6">
+            
+            <!-- Gallery Actions -->
+            <div class="flex items-center justify-between">
+                <div>
+                    <h3 class="text-sm font-black uppercase tracking-widest text-[#4A6070] flex items-center gap-3">
+                        <span class="w-1.5 h-6 bg-[#D31111] rounded-full"></span>
+                        Image Gallery
+                    </h3>
+                </div>
+                <button @click="uploadModal = true" class="flex items-center gap-2 bg-[#D31111] text-white px-5 py-2.5 rounded-xl text-sm font-bold shadow-lg hover:bg-[#B00E0E] transition-all transform hover:-translate-y-0.5">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+                    Add New Image
+                </button>
+            </div>
+
+            <!-- Upload Modal -->
+            <div x-show="uploadModal" 
+                 x-transition:enter="transition ease-out duration-300"
+                 x-transition:enter-start="opacity-0"
+                 x-transition:enter-end="opacity-100"
+                 x-transition:leave="transition ease-in duration-200"
+                 x-transition:leave-start="opacity-100"
+                 x-transition:leave-end="opacity-0"
+                 class="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
+                 style="display: none;">
+                
+                <div @click.away="uploadModal = false" class="w-full max-w-xl bg-[#111F2C] border border-[#1E3040] rounded-3xl overflow-hidden shadow-2xl">
+                    <div class="p-6 border-b border-[#1E3040] flex items-center justify-between bg-[#152533]">
+                        <h4 class="font-black uppercase tracking-widest text-sm text-white">Upload New Asset</h4>
+                        <button @click="uploadModal = false" class="text-[#4A6070] hover:text-white transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
                         </button>
+                    </div>
+
+                    <div class="p-8 space-y-6">
+                        <div class="p-8 rounded-2xl border border-dashed border-[#D3111140] bg-[#D3111105] text-center">
+                            <input type="file" wire:model="newGalleryImage" class="hidden" id="gallery-upload">
+                            <label for="gallery-upload" class="cursor-pointer block">
+                                <div class="w-16 h-16 rounded-full bg-[#111F2C] border border-[#1E3040] flex items-center justify-center mx-auto mb-4 group-hover:border-[#D31111] transition-all">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D31111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" x2="12" y1="3" y2="15"/></svg>
+                                </div>
+                                <span class="text-sm font-bold text-white block mb-1">
+                                    {{ $newGalleryImage ? $newGalleryImage->getClientOriginalName() : 'Click to select image' }}
+                                </span>
+                                <span class="text-xs text-[#4A6070]">PNG, JPG or WEBP (Max 10MB)</span>
+                            </label>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div>
+                                <label class="text-[0.65rem] font-bold text-[#4A6070] uppercase tracking-widest block mb-2">Image Caption</label>
+                                <input type="text" wire:model="galleryCaption" placeholder="What is this encounter about?" class="w-full bg-[#0D1B22] border border-[#1E3040] rounded-xl p-4 text-sm text-white focus:border-[#D31111] outline-none transition-all">
+                            </div>
+
+                            <button wire:click="uploadGalleryImage" @click="if(!$wire.newGalleryImage) return; uploadModal = false" wire:loading.attr="disabled" class="w-full bg-[#D31111] text-white py-4 rounded-xl font-bold shadow-lg hover:bg-[#B00E0E] transition-all disabled:opacity-50 flex items-center justify-center gap-3">
+                                <span wire:loading.remove>Commit to Gallery</span>
+                                <span wire:loading>Optimizing Asset...</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lightbox -->
+            <div x-show="lightbox" 
+                 x-transition:enter="transition ease-out duration-300"
+                 x-transition:enter-start="opacity-0"
+                 x-transition:enter-end="opacity-100"
+                 x-transition:leave="transition ease-in duration-200"
+                 x-transition:leave-start="opacity-100"
+                 x-transition:leave-end="opacity-0"
+                 class="fixed inset-0 z-[110] flex items-center justify-center p-8 bg-black/95 backdrop-blur-md"
+                 style="display: none;"
+                 @keydown.escape.window="lightbox = false">
+                
+                <button @click="lightbox = false" class="absolute top-8 right-8 text-white/50 hover:text-white transition-colors z-[120]">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                </button>
+
+                <div class="max-w-5xl w-full flex flex-col items-center gap-6">
+                    <img :src="activeImage" class="max-w-full max-h-[75vh] rounded-2xl shadow-2xl border border-white/10 object-contain">
+                    <div class="text-center">
+                        <p x-text="activeCaption" class="text-lg font-bold text-white mb-2"></p>
+                        <p class="text-xs text-[#4A6070] font-mono tracking-widest uppercase">Buffer Zone Asset Registry</p>
                     </div>
                 </div>
             </div>
 
             <!-- Image Grid -->
-            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
+            <div class="grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-6">
                 @foreach($gallery as $item)
-                    <div class="group relative aspect-square rounded-xl overflow-hidden bg-[#111F2C] border border-[#1E3040] hover:border-[#D31111] transition-all">
-                        <img src="{{ asset('assets/images/' . $item->filename) }}" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity">
+                    <div class="group relative aspect-square rounded-2xl overflow-hidden bg-[#111F2C] border border-[#1E3040] hover:border-[#D31111] transition-all shadow-lg">
+                        <img src="{{ asset('assets/images/' . $item->filename) }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-60 group-hover:opacity-100">
                         
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-4 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all">
-                            <p class="text-[0.6rem] text-white font-bold truncate mb-3">{{ $item->caption ?: 'No caption' }}</p>
-                            <button 
-                                wire:click="deleteGalleryImage({{ $item->id }})" 
-                                wire:confirm="Are you sure you want to delete this image?"
-                                class="w-full py-1.5 rounded-lg bg-red-600/20 text-red-500 text-[0.65rem] font-black uppercase hover:bg-red-600 hover:text-white transition-all"
-                            >
-                                Delete
-                            </button>
+                        <!-- Overlay Actions -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-5 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                            <p class="text-[0.65rem] text-white font-bold truncate mb-4">{{ $item->caption ?: 'Untagged Asset' }}</p>
+                            
+                            <div class="flex gap-2">
+                                <button 
+                                    @click="lightbox = true; activeImage = '{{ asset('assets/images/' . $item->filename) }}'; activeCaption = '{{ $item->caption ?: 'Untagged Asset' }}'"
+                                    class="flex-1 py-2.5 rounded-xl bg-white/10 text-white text-[0.6rem] font-black uppercase hover:bg-white hover:text-black transition-all flex items-center justify-center gap-2"
+                                >
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0z"/><circle cx="12" cy="12" r="3"/></svg>
+                                    View
+                                </button>
+                                <button 
+                                    wire:click="deleteGalleryImage({{ $item->id }})" 
+                                    wire:confirm="Permanent Deletion: Are you sure?"
+                                    class="w-10 h-10 rounded-xl bg-red-600/20 text-red-500 hover:bg-red-600 hover:text-white transition-all flex items-center justify-center"
+                                >
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/><line x1="10" x2="10" y1="11" y2="17"/><line x1="14" x2="14" y1="11" y2="17"/></svg>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 @endforeach

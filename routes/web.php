@@ -119,6 +119,10 @@ Route::middleware('admin')->group(function () {
     Route::get('/admin/contacts', \App\Livewire\Admin\ContactManager::class)
         ->name('admin.contacts');
 
+    // Link Manager
+    Route::get('/admin/links', \App\Livewire\Admin\LinkManager::class)
+        ->name('admin.links');
+
     // System Operations (Require SuperAdmin)
     Route::middleware('superadmin')->group(function () {
         Route::post('/api/admin/commands/execute', [CommandsController::class, 'execute'])
