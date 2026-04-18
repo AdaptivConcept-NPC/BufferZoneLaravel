@@ -36,7 +36,14 @@ class PageManager extends Component
     public function saveContent()
     {
         foreach ($this->contents as $index => $item) {
-            $updateData = ['value' => $item['value']];
+            $value = $item['value'];
+
+            // Handle boolean from toggles (Livewire sends true/false)
+            if (is_bool($value)) {
+                $value = $value ? '1' : '0';
+            }
+
+            $updateData = ['value' => $value];
 
             // Handle image upload if exists for this index
             if (isset($this->imageUploads[$index])) {
@@ -92,6 +99,6 @@ class PageManager extends Component
     {
         return view('livewire.admin.page-manager', [
             'gallery' => GalleryItem::ordered()->get(),
-        ]);
+        ])->layout('layouts.admin');
     }
 }

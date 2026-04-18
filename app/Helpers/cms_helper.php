@@ -18,6 +18,12 @@ if (!function_exists('cms')) {
 
         try {
             $item = \App\Models\SiteContent::where('key', $key)->first();
+            
+            if ($item && $item->type === 'json') {
+                $cms_cache[$key] = json_decode($item->value, true) ?: [];
+                return $cms_cache[$key];
+            }
+
             $value = $item ? $item->value : $default;
             $cms_cache[$key] = $value;
             return $value;

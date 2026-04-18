@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
@@ -107,7 +108,18 @@
 
             <!-- Page Content -->
             <main class="p-8">
+                @if(session('success'))
+                    <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 4000)" class="mb-6 bg-[#10B98120] text-[#10B981] p-4 rounded-xl text-xs font-bold border border-[#10B98140] flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <span class="w-1.5 h-1.5 rounded-full bg-[#10B981] animate-pulse"></span>
+                            {{ session('success') }}
+                        </div>
+                        <button @click="show = false" class="opacity-50 hover:opacity-100">&times;</button>
+                    </div>
+                @endif
+                
                 @yield('content')
+                {{ $slot ?? '' }}
             </main>
         </div>
     </div>

@@ -32,6 +32,6 @@ class ContactManager extends Component
     {
         return view('livewire.admin.contact-manager', [
             'submissions' => ContactSubmission::latest()->paginate(10),
-        ]);
+        ])->layout('layouts.admin');
     }
 }

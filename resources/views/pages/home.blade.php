@@ -8,8 +8,11 @@
     <div class="absolute inset-0" style="background: linear-gradient(to right, rgba(33,51,64,0.88) 50%, rgba(33,51,64,0.4));"></div>
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div class="max-w-2xl">
-            <p class="text-lg mb-4 opacity-90">{!! cms('home_location_label', 'Gauteng, South Africa') !!}</p>
-            <h1 style="font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: clamp(2.2rem, 5vw, 4rem); line-height: 1.1; margin-bottom: 1.25rem;">{!! cms('home_hero_title', 'Time Saves Lives.<br /><span style="color: #D31111;">Buffer Zone</span> Saves You Both.') !!}</h1>
+            <p class="text-lg mb-4 opacity-90 flex items-center gap-2">
+                <i id="test1" class="fas fa-map-marker-alt text-[#D31111]"></i>
+                <span>{!! cms('home_location_label', 'Gauteng, South Africa') !!}</span>
+            </p>
+            <h1 style="font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: clamp(2.2rem, 5vw, 4rem); line-height: 1.1; margin-bottom: 1.25rem;">{!! cms('home_hero_title', 'Time Saves Lives.<br /><span style="color: #D31111; font-family: \'RaceSport\', sans-serif; -webkit-text-stroke: 4px white; paint-order: stroke fill;font-style: italic !important;">Buffer Zone</span> Saves You Both.') !!}</h1>
             <p style="font-size: 1.1rem; line-height: 1.65; opacity: 0.85; margin-bottom: 2.5rem; max-width: 520px;">{!! cms('home_hero_subtitle', 'Professional event medical services tailored to your unique requirements. Qualified Advanced Life Support practitioners on standby — for every event, every time.') !!}</p>
             <div class="flex gap-4 flex-wrap">
                 <div class="cta-pulse-wrapper">
@@ -86,7 +89,7 @@
                     </div>
                     <h3 class="text-xl font-bold text-white mb-4">Event Medical Services</h3>
                     <p class="text-[#8BA4B4] text-sm leading-relaxed mb-6">Full-scale medical support for events of all sizes, from rapid response teams to mobile clinics.</p>
-                    <a href="{{ route('services.ems') }}" class="text-[#D31111] text-xs font-bold uppercase tracking-wider flex items-center gap-2 group-hover:gap-4 transition-all">
+                    <a href="{{ route('service.medical-cover') }}" class="text-[#D31111] text-xs font-bold uppercase tracking-wider flex items-center gap-2 group-hover:gap-4 transition-all">
                         Learn More <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
@@ -103,7 +106,7 @@
                     </div>
                     <h3 class="text-xl font-bold text-white mb-4">Training & Workshops</h3>
                     <p class="text-[#8BA4B4] text-sm leading-relaxed mb-6">Empowering teams with life-saving skills through accredited first aid and emergency response training.</p>
-                    <a href="{{ route('services.training') }}" class="text-[#D31111] text-xs font-bold uppercase tracking-wider flex items-center gap-2 group-hover:gap-4 transition-all">
+                    <a href="{{ route('service.training') }}" class="text-[#D31111] text-xs font-bold uppercase tracking-wider flex items-center gap-2 group-hover:gap-4 transition-all">
                         Learn More <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
@@ -120,7 +123,7 @@
                     </div>
                     <h3 class="text-xl font-bold text-white mb-4">Professional Staffing</h3>
                     <p class="text-[#8BA4B4] text-sm leading-relaxed mb-6">Qualified ILS and ALS practitioners available for long-term site placements and critical care standby.</p>
-                    <a href="{{ route('services.staffing') }}" class="text-[#D31111] text-xs font-bold uppercase tracking-wider flex items-center gap-2 group-hover:gap-4 transition-all">
+                    <a href="{{ route('service.staffing') }}" class="text-[#D31111] text-xs font-bold uppercase tracking-wider flex items-center gap-2 group-hover:gap-4 transition-all">
                         Learn More <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
@@ -140,8 +143,8 @@
                 </div>
                 <!-- Floating Stat Card -->
                 <div class="absolute -bottom-6 -right-4 rounded-2xl p-5 z-10 hidden md:block" style="background: #D31111; color: #fff; box-shadow: 0 8px 24px rgba(211,17,17,0.35);">
-                    <p style="font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 2.2rem; line-height: 1;">5+</p>
-                    <p style="font-size: 0.75rem; font-weight: 600; opacity: 0.85; margin-top: 0.25rem;">Years of Experience</p>
+                    <p style="font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 2.2rem; line-height: 1;">10+</p>
+                    <p style="font-size: 0.75rem; font-weight: 600; opacity: 0.85; margin-top: 0.25rem;">Years of Professional Experience</p>
                 </div>
             </div>
 
@@ -176,13 +179,8 @@
                 </ul>
 
                 <!-- Stats row -->
-                @php
-                    $stats = [
-                        ['label' => 'Years Active', 'value' => '5+'],
-                        ['label' => 'Events Covered', 'value' => '200+'],
-                        ['label' => 'Qualified Staff', 'value' => '20+'],
-                    ];
-                @endphp
+                @php $stats = cms('home_stats_data', [['label' => 'Years Active', 'value' => '5+'], ['label' => 'Events Covered', 'value' => '200+'], ['label' => 'Qualified Staff', 'value' => '20+']]); @endphp
+                @if(cms('home_stats_visible', '1') == '1' && count($stats) > 0)
                 <div class="flex flex-wrap gap-8 pt-6" style="border-top: 1px solid #E5E7EB;">
                     @foreach($stats as $stat)
                     <div>
@@ -195,6 +193,7 @@
                     </div>
                     @endforeach
                 </div>
+                @endif
             </div>
         </div>
     </div>

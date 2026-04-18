@@ -57,6 +57,24 @@
                                         wire:model="contents.{{ $actualIndex }}.value"
                                         class="w-full bg-[#0D1B22] border border-[#1E3040] rounded-xl p-4 text-sm text-white focus:border-[#D31111] outline-none transition-all min-h-[120px]"
                                     ></textarea>
+                                @elseif($item['type'] === 'toggle')
+                                    <div class="flex items-center gap-4 py-2">
+                                        <label class="relative inline-flex items-center cursor-pointer">
+                                            <input type="checkbox" wire:model="contents.{{ $actualIndex }}.value" class="sr-only peer">
+                                            <div class="w-11 h-6 bg-[#111F2C] border border-[#1E3040] peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-[#4A6070] after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#D31111] peer-checked:after:bg-white"></div>
+                                        </label>
+                                        <span class="text-xs font-bold text-[#8BA4B4]">
+                                            {{ $item['value'] == '1' ? 'Active' : 'Hidden' }}
+                                        </span>
+                                    </div>
+                                @elseif($item['type'] === 'json')
+                                    <div class="space-y-2">
+                                        <textarea 
+                                            wire:model="contents.{{ $actualIndex }}.value"
+                                            class="w-full bg-[#0D1B22] border border-[#1E3040] rounded-xl p-4 text-xs text-white font-mono focus:border-[#D31111] outline-none transition-all min-h-[150px]"
+                                        ></textarea>
+                                        <p class="text-[0.6rem] text-[#4A6070]">Important: Value must be a valid JSON array of objects with "label" and "value" keys.</p>
+                                    </div>
                                 @else
                                     <input 
                                         type="text" 

@@ -1,5 +1,19 @@
 @import 'tailwindcss';
 
+@font-face {
+  font-family: 'RaceSport';
+  src: url('/fonts/race-sport/Race Sport.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Aeromove';
+  src: url('/fonts/aeromovedemo/AeromoveDemoRegular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
 @source '../**/*.blade.php';
@@ -20,6 +34,8 @@
   --font-montserrat: 'Montserrat', sans-serif;
   --font-inter: 'Inter', sans-serif;
   --font-roboto: 'Roboto', sans-serif;
+  --font-race-sport: 'RaceSport', sans-serif;
+  --font-aeromove: 'Aeromove', sans-serif;
 
   --shadow-card: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -1px rgba(0,0,0,0.04);
   --shadow-card-hover: 0 10px 25px -5px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);

@@ -17,7 +17,7 @@ class SiteContentSeeder extends Seeder
             [
                 'key' => 'home_hero_title',
                 'label' => 'Hero Title',
-                'value' => 'Time Saves Lives.<br /><span style="color: #D31111;">Buffer Zone</span> Saves You Both.',
+                'value' => 'Time Saves Lives.<br /><span style="color: #D31111; font-family: Aeromove, sans-serif;">Buffer Zone</span> Saves You Both.',
                 'type' => 'longtext',
                 'section' => 'home',
             ],
