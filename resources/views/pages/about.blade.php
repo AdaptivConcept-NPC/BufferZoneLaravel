@@ -27,10 +27,9 @@
                 </div>
             </div>
             <div>
-                <div class="bg-soft-grey rounded-lg h-80 flex items-center justify-center">
-                    <p class="text-gray-500">Professional Team Shot Placeholder</p>
-
-                </div>
+            <div class="img-container h-80">
+                <img src="{{ asset('assets/images/stock/ems_team_shot.png') }}" alt="Our Professional EMS Team" class="img-stock">
+            </div>
                 <h5>Hi, I am [Director Name]</h5>
                 <p class="text-gray-700">[Director Title]</p>
                 <p class="text-gray-700">[Director Story]</p>

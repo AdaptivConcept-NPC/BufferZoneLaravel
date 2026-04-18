@@ -39,6 +39,19 @@
                 </div>
             </div>
         </div>
+        <div class="grid md:grid-cols-2 gap-12 items-center mt-20">
+            <div class="img-container h-80">
+                <img src="{{ asset('assets/images/stock/medical_training.png') }}" alt="Medical Training Session" class="img-stock">
+            </div>
+            <div>
+                <h2 class="text-3xl font-bold mb-6" style="color: #213340;">Hands-On Excellence</h2>
+                <p class="text-lg text-gray-700 leading-relaxed mb-6">Our workshops are designed to be immersive and practical. We use high-fidelity mannikins and real-world scenarios to ensure all participants walk away with the confidence to act in an emergency.</p>
+                <div class="flex items-center gap-4 text-[#D31111] font-bold">
+                    <span class="w-8 h-1 bg-[#D31111] rounded-full"></span>
+                    Certified Instructors
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 @endsection

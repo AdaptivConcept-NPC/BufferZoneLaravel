@@ -25,8 +25,8 @@
                     <a href="/#contact" class="btn-emergency text-white px-6 py-3 rounded mt-8 inline-block" style="position: relative;">Book Sports Coverage</a>
                 </div>
             </div>
-            <div class="bg-soft-grey rounded-lg h-80 flex items-center justify-center">
-                <p class="text-gray-500">Sports Event Medical Placeholder</p>
+            <div class="img-container h-80">
+                <img src="{{ asset('assets/images/stock/sports_medical.png') }}" alt="Sports Medical Coverage" class="img-stock">
             </div>
         </div>
     </div>
