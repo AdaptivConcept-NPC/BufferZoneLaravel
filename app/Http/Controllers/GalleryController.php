@@ -121,8 +121,11 @@ class GalleryController extends Controller
         try {
             $item = GalleryItem::findOrFail($id);
             
-            // Delete file from storage
-            Storage::disk('public')->delete('assets/images/' . $item->filename);
+            // Delete file from storage using public_path
+            $filePath = public_path('assets/images/' . $item->filename);
+            if (\Illuminate\Support\Facades\File::exists($filePath)) {
+                \Illuminate\Support\Facades\File::delete($filePath);
+            }
             
             // Delete DB record
             $filename = $item->filename;
