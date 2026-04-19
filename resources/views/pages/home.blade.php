@@ -81,7 +81,7 @@
             <!-- Service 1 -->
             <div class="group relative overflow-hidden rounded-3xl bg-[#0D1B22] border border-[#1E3040] hover:border-[#D31111] transition-all duration-500">
                 <div class="aspect-video overflow-hidden">
-                    <img src="{{ asset(cms('home_service_1_image', 'assets/images/IMG-20260314-WA0005.jpg')) }}" alt="Event Medical Services" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700">
+                    <img src="{{ asset(cms('home_service_1_image', 'assets/images/stock/ambulance_standby.png')) }}" alt="Event Medical Services" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700">
                 </div>
                 <div class="p-8">
                     <div class="w-12 h-12 rounded-xl bg-[#D31111]/10 flex items-center justify-center mb-6">
@@ -98,7 +98,7 @@
             <!-- Service 2 -->
             <div class="group relative overflow-hidden rounded-3xl bg-[#0D1B22] border border-[#1E3040] hover:border-[#D31111] transition-all duration-500">
                 <div class="aspect-video overflow-hidden">
-                    <img src="{{ asset(cms('home_service_2_image', 'assets/images/IMG-20260314-WA0009.jpg')) }}" alt="Advanced Training" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700">
+                    <img src="{{ asset(cms('home_service_2_image', 'assets/images/stock/medical_training.png')) }}" alt="Advanced Training" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700">
                 </div>
                 <div class="p-8">
                     <div class="w-12 h-12 rounded-xl bg-[#D31111]/10 flex items-center justify-center mb-6">
@@ -115,7 +115,7 @@
             <!-- Service 3 -->
             <div class="group relative overflow-hidden rounded-3xl bg-[#0D1B22] border border-[#1E3040] hover:border-[#D31111] transition-all duration-500">
                 <div class="aspect-video overflow-hidden">
-                    <img src="{{ asset(cms('home_service_3_image', 'assets/images/IMG-20260314-WA0018.jpg')) }}" alt="Professional Staffing" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700">
+                    <img src="{{ asset(cms('home_service_3_image', 'assets/images/stock/ems_team_shot.png')) }}" alt="Professional Staffing" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700">
                 </div>
                 <div class="p-8">
                     <div class="w-12 h-12 rounded-xl bg-[#D31111]/10 flex items-center justify-center mb-6">
