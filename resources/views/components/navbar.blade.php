@@ -27,11 +27,45 @@
                             Services
                             <svg class="w-3 h-3 opacity-60 group-hover:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                         </button>
-                        <div class="hidden group-hover:block absolute left-0 mt-0 w-48 bg-white rounded-md shadow-lg z-10">
-                            <a href="{{ url('/services/medical-cover') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 shadow-md">Event Medical Cover</a>
-                            <a href="{{ url('/services/training') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 shadow-md">Training Workshops</a>
-                            <a href="{{ url('/services/staffing') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 shadow-md">Staffing Contingent</a>
-                            <a href="{{ url('/services/corporate') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 shadow-md">Corporate Packages</a>
+                        <div class="absolute left-1/2 -translate-x-1/2 top-full pt-2 w-64 z-10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                            <div class="bg-white rounded-2xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.15)] border border-gray-100 p-2 space-y-1">
+                                <a href="{{ url('/services/medical-cover') }}" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm text-[#213340] hover:bg-[#D31111]/5 hover:text-[#D31111] transition-all group/item shadow-sm hover:shadow-md">
+                                    <div class="w-9 h-9 rounded-lg bg-[#D31111]/10 text-[#D31111] flex flex-shrink-0 items-center justify-center group-hover/item:scale-110 transition-transform">
+                                        <i class="fas fa-medkit"></i>
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <span class="font-bold">Medical Cover</span>
+                                        <span class="text-[0.65rem] text-[#8BA4B4] font-medium leading-tight mt-0.5 group-hover/item:text-[#D31111]/70 transition-colors">Event standby & support</span>
+                                    </div>
+                                </a>
+                                <a href="{{ url('/services/training') }}" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm text-[#213340] hover:bg-[#D31111]/5 hover:text-[#D31111] transition-all group/item shadow-sm hover:shadow-md">
+                                    <div class="w-9 h-9 rounded-lg bg-[#D31111]/10 text-[#D31111] flex flex-shrink-0 items-center justify-center group-hover/item:scale-110 transition-transform">
+                                        <i class="fas fa-graduation-cap"></i>
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <span class="font-bold">Training Workshops</span>
+                                        <span class="text-[0.65rem] text-[#8BA4B4] font-medium leading-tight mt-0.5 group-hover/item:text-[#D31111]/70 transition-colors">First aid & emergency skills</span>
+                                    </div>
+                                </a>
+                                <a href="{{ url('/services/staffing') }}" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm text-[#213340] hover:bg-[#D31111]/5 hover:text-[#D31111] transition-all group/item shadow-sm hover:shadow-md">
+                                    <div class="w-9 h-9 rounded-lg bg-[#D31111]/10 text-[#D31111] flex flex-shrink-0 items-center justify-center group-hover/item:scale-110 transition-transform">
+                                        <i class="fas fa-user-md"></i>
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <span class="font-bold">Staffing Contingent</span>
+                                        <span class="text-[0.65rem] text-[#8BA4B4] font-medium leading-tight mt-0.5 group-hover/item:text-[#D31111]/70 transition-colors">Professional placements</span>
+                                    </div>
+                                </a>
+                                <a href="{{ url('/services/corporate') }}" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm text-[#213340] hover:bg-[#D31111]/5 hover:text-[#D31111] transition-all group/item shadow-sm hover:shadow-md">
+                                    <div class="w-9 h-9 rounded-lg bg-[#D31111]/10 text-[#D31111] flex flex-shrink-0 items-center justify-center group-hover/item:scale-110 transition-transform">
+                                        <i class="fas fa-briefcase"></i>
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <span class="font-bold">Corporate Packages</span>
+                                        <span class="text-[0.65rem] text-[#8BA4B4] font-medium leading-tight mt-0.5 group-hover/item:text-[#D31111]/70 transition-colors">Business EMS solutions</span>
+                                    </div>
+                                </a>
+                            </div>
                         </div>
                     </div>
 
@@ -40,11 +74,33 @@
                             Events
                             <svg class="w-3 h-3 opacity-60 group-hover:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                         </button>
-                        <div class="hidden group-hover:block absolute left-0 mt-0 w-48 bg-white rounded-md shadow-lg z-10">
-                            <a href="{{ url('/events/sports') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 shadow-md">Sports</a>
-                            <a href="{{ url('/events/concerts') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 shadow-md">Concerts</a>
-                            <a href="{{ url('/events/corporate') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 shadow-md">Corporate</a>
-                            <a href="{{ url('/events/community') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 shadow-md">Community/Public</a>
+                        <div class="absolute left-1/2 -translate-x-1/2 top-full pt-2 w-56 z-10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                            <div class="bg-white rounded-2xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.15)] border border-gray-100 p-2 space-y-1">
+                                <a href="{{ url('/events/sports') }}" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm text-[#213340] hover:bg-[#D31111]/5 hover:text-[#D31111] transition-all group/item shadow-sm hover:shadow-md">
+                                    <div class="w-8 h-8 rounded-lg bg-[#D31111]/10 text-[#D31111] flex flex-shrink-0 items-center justify-center group-hover/item:scale-110 transition-transform">
+                                        <i class="fas fa-running"></i>
+                                    </div>
+                                    <span class="font-bold">Sports & Athletics</span>
+                                </a>
+                                <a href="{{ url('/events/concerts') }}" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm text-[#213340] hover:bg-[#D31111]/5 hover:text-[#D31111] transition-all group/item shadow-sm hover:shadow-md">
+                                    <div class="w-8 h-8 rounded-lg bg-[#D31111]/10 text-[#D31111] flex flex-shrink-0 items-center justify-center group-hover/item:scale-110 transition-transform">
+                                        <i class="fas fa-music"></i>
+                                    </div>
+                                    <span class="font-bold">Concerts & Festivals</span>
+                                </a>
+                                <a href="{{ url('/events/corporate') }}" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm text-[#213340] hover:bg-[#D31111]/5 hover:text-[#D31111] transition-all group/item shadow-sm hover:shadow-md">
+                                    <div class="w-8 h-8 rounded-lg bg-[#D31111]/10 text-[#D31111] flex flex-shrink-0 items-center justify-center group-hover/item:scale-110 transition-transform">
+                                        <i class="fas fa-building"></i>
+                                    </div>
+                                    <span class="font-bold">Corporate Functions</span>
+                                </a>
+                                <a href="{{ url('/events/community') }}" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm text-[#213340] hover:bg-[#D31111]/5 hover:text-[#D31111] transition-all group/item shadow-sm hover:shadow-md">
+                                    <div class="w-8 h-8 rounded-lg bg-[#D31111]/10 text-[#D31111] flex flex-shrink-0 items-center justify-center group-hover/item:scale-110 transition-transform">
+                                        <i class="fas fa-users"></i>
+                                    </div>
+                                    <span class="font-bold">Community & Public</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -85,20 +141,36 @@
         <a href="{{ url('/about') }}" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 shadow-md">About</a>
         <div class="border-t border-gray-200">
             <button class="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 shadow-md toggle-submenu" data-menu="services">Services</button>
-            <div id="services-submenu" class="hidden bg-gray-50">
-                <a href="{{ url('/services/medical-cover') }}" class="block px-8 py-2 text-gray-700 hover:bg-gray-100 shadow-md text-sm">Event Medical Cover</a>
-                <a href="{{ url('/services/training') }}" class="block px-8 py-2 text-gray-700 hover:bg-gray-100 shadow-md text-sm">Training Workshops</a>
-                <a href="{{ url('/services/staffing') }}" class="block px-8 py-2 text-gray-700 hover:bg-gray-100 shadow-md text-sm">Staffing Contingent</a>
-                <a href="{{ url('/services/corporate') }}" class="block px-8 py-2 text-gray-700 hover:bg-gray-100 shadow-md text-sm">Corporate Packages</a>
+            <div id="services-submenu" class="hidden bg-gray-50/50">
+                <a href="{{ url('/services/medical-cover') }}" class="flex items-center gap-3 px-8 py-3 text-[#213340] hover:bg-[#D31111]/5 hover:text-[#D31111] transition-colors border-b border-gray-100 text-sm font-semibold">
+                    <i class="fas fa-medkit text-[#D31111] w-4 text-center"></i> Medical Cover
+                </a>
+                <a href="{{ url('/services/training') }}" class="flex items-center gap-3 px-8 py-3 text-[#213340] hover:bg-[#D31111]/5 hover:text-[#D31111] transition-colors border-b border-gray-100 text-sm font-semibold">
+                    <i class="fas fa-graduation-cap text-[#D31111] w-4 text-center"></i> Training Workshops
+                </a>
+                <a href="{{ url('/services/staffing') }}" class="flex items-center gap-3 px-8 py-3 text-[#213340] hover:bg-[#D31111]/5 hover:text-[#D31111] transition-colors border-b border-gray-100 text-sm font-semibold">
+                    <i class="fas fa-user-md text-[#D31111] w-4 text-center"></i> Staffing Contingent
+                </a>
+                <a href="{{ url('/services/corporate') }}" class="flex items-center gap-3 px-8 py-3 text-[#213340] hover:bg-[#D31111]/5 hover:text-[#D31111] transition-colors text-sm font-semibold">
+                    <i class="fas fa-briefcase text-[#D31111] w-4 text-center"></i> Corporate Packages
+                </a>
             </div>
         </div>
         <div class="border-t border-gray-200">
             <button class="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 shadow-md toggle-submenu" data-menu="events">Events</button>
-            <div id="events-submenu" class="hidden bg-gray-50">
-                <a href="{{ url('/events/sports') }}" class="block px-8 py-2 text-gray-700 hover:bg-gray-100 shadow-md text-sm">Sports</a>
-                <a href="{{ url('/events/concerts') }}" class="block px-8 py-2 text-gray-700 hover:bg-gray-100 shadow-md text-sm">Concerts</a>
-                <a href="{{ url('/events/corporate') }}" class="block px-8 py-2 text-gray-700 hover:bg-gray-100 shadow-md text-sm">Corporate</a>
-                <a href="{{ url('/events/community') }}" class="block px-8 py-2 text-gray-700 hover:bg-gray-100 shadow-md text-sm">Community/Public</a>
+            <div id="events-submenu" class="hidden bg-gray-50/50">
+                <a href="{{ url('/events/sports') }}" class="flex items-center gap-3 px-8 py-3 text-[#213340] hover:bg-[#D31111]/5 hover:text-[#D31111] transition-colors border-b border-gray-100 text-sm font-semibold">
+                    <i class="fas fa-running text-[#D31111] w-4 text-center"></i> Sports & Athletics
+                </a>
+                <a href="{{ url('/events/concerts') }}" class="flex items-center gap-3 px-8 py-3 text-[#213340] hover:bg-[#D31111]/5 hover:text-[#D31111] transition-colors border-b border-gray-100 text-sm font-semibold">
+                    <i class="fas fa-music text-[#D31111] w-4 text-center"></i> Concerts & Festivals
+                </a>
+                <a href="{{ url('/events/corporate') }}" class="flex items-center gap-3 px-8 py-3 text-[#213340] hover:bg-[#D31111]/5 hover:text-[#D31111] transition-colors border-b border-gray-100 text-sm font-semibold">
+                    <i class="fas fa-building text-[#D31111] w-4 text-center"></i> Corporate Functions
+                </a>
+                <a href="{{ url('/events/community') }}" class="flex items-center gap-3 px-8 py-3 text-[#213340] hover:bg-[#D31111]/5 hover:text-[#D31111] transition-colors text-sm font-semibold">
+                    <i class="fas fa-users text-[#D31111] w-4 text-center"></i> Community & Public
+                </a>
             </div>
         </div>
         <div class="border-t border-gray-200 p-4 flex gap-2">
