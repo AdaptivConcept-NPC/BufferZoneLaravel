@@ -92,8 +92,13 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
     submitBtn.innerHTML = 'Validating...';
     errorDiv.classList.add('hidden');
     
+    // Subdirectory safe dynamic routing
+    let baseUrl = window.location.pathname.replace(/\/admin\/login\/?$/, '');
+    // Ensure we don't end up with an empty string if deployed at root
+    if (!baseUrl) baseUrl = '';
+
     try {
-        const response = await fetch('/api/auth/login', {
+        const response = await fetch(`${baseUrl}/api/auth/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -106,7 +111,7 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
         
         if (data.success) {
             submitBtn.innerHTML = 'Redirecting...';
-            window.location.href = '/admin/dashboard';
+            window.location.href = `${baseUrl}/admin/dashboard`;
         } else {
             errorText.textContent = data.message || 'Verification failed';
             errorDiv.classList.remove('hidden');

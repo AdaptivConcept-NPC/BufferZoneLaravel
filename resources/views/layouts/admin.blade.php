@@ -38,18 +38,18 @@
             </div>
 
             <nav class="flex-1 px-4 py-8 space-y-2">
-                <a href="/admin/dashboard" class="nav-link {{ request()->is('admin/dashboard') ? 'active' : '' }}">
+                <a href="{{ url('admin/dashboard') }}" class="nav-link {{ request()->is('admin/dashboard') ? 'active' : '' }}">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
                     Dashboard
                 </a>
 
 
-                <a href="/admin/pages" class="nav-link {{ request()->is('admin/pages') ? 'active' : '' }}">
+                <a href="{{ url('admin/pages') }}" class="nav-link {{ request()->is('admin/pages') ? 'active' : '' }}">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.375 2.625a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4Z"/></svg>
                     Page Manager
                 </a>
 
-                <a href="/admin/contacts" class="nav-link {{ request()->is('admin/contacts') ? 'active' : '' }}">
+                <a href="{{ url('admin/contacts') }}" class="nav-link {{ request()->is('admin/contacts') ? 'active' : '' }}">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
                     Contact Inbox
                     @php $unread = \App\Models\ContactSubmission::where('is_read', false)->count(); @endphp
@@ -58,7 +58,7 @@
                     @endif
                 </a>
 
-                <a href="/admin/links" class="nav-link {{ request()->is('admin/links') ? 'active' : '' }}">
+                <a href="{{ url('admin/links') }}" class="nav-link {{ request()->is('admin/links') ? 'active' : '' }}">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
                     Manage Links
                 </a>
@@ -66,23 +66,23 @@
                 <div class="pt-8 text-[0.6rem] px-4 font-bold text-[#4A6070] uppercase tracking-widest mb-2">Support</div>
                 
                 @if(auth()->user()->isSuperAdmin())
-                <a href="/admin/users" class="nav-link {{ request()->is('admin/users') ? 'active' : '' }}">
+                <a href="{{ url('admin/users') }}" class="nav-link {{ request()->is('admin/users') ? 'active' : '' }}">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                     User Management
                 </a>
                 @endif
-                <a href="/" class="nav-link">
+                <a href="{{ url('/') }}" class="nav-link">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
                     Live Site
                 </a>
 
                 <div class="pt-8 text-[0.6rem] px-4 font-bold text-[#4A6070] uppercase tracking-widest mb-2">High-Level</div>
                 @if(auth()->user()->isSuperAdmin())
-                <a href="/admin/command-center" class="nav-link {{ request()->is('admin/command-center') ? 'active' : '' }}">
+                <a href="{{ url('admin/command-center') }}" class="nav-link {{ request()->is('admin/command-center') ? 'active' : '' }}">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
                     Command Center
                 </a>
-                <a href="/admin/commands" class="nav-link {{ request()->is('admin/commands') ? 'active' : '' }}">
+                <a href="{{ url('admin/commands') }}" class="nav-link {{ request()->is('admin/commands') ? 'active' : '' }}">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" x2="20" y1="19" y2="19"/></svg>
                     Terminal
                 </a>
@@ -90,7 +90,7 @@
             </nav>
 
             <div class="p-6 border-t border-[#1E3040]">
-                <form action="/admin/logout" method="POST">
+                <form action="{{ url('admin/logout') }}" method="POST">
                     @csrf
                     <button type="submit" class="w-full nav-link text-red-400 hover:text-red-300">
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" x2="9" y1="12" y2="12"/></svg>
