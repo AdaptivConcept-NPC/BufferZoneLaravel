@@ -16,7 +16,7 @@
             </div>
         </div>
 
-        <form action="/admin/commands/execute" method="POST" class="space-y-4">
+        <form action="/api/admin/commands/execute" method="POST" class="space-y-4">
             @csrf
             <div>
                 <label for="command" class="block text-[0.65rem] font-bold text-[#4A6070] uppercase tracking-widest mb-2">Artisan Statement</label>

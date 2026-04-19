@@ -43,12 +43,6 @@
                     Dashboard
                 </a>
 
-                @if(auth()->user()->isSuperAdmin())
-                <a href="/admin/commands" class="nav-link {{ request()->is('admin/commands') ? 'active' : '' }}">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" x2="20" y1="19" y2="19"/></svg>
-                    Terminal
-                </a>
-                @endif
 
                 <a href="/admin/pages" class="nav-link {{ request()->is('admin/pages') ? 'active' : '' }}">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.375 2.625a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4Z"/></svg>
@@ -71,14 +65,28 @@
 
                 <div class="pt-8 text-[0.6rem] px-4 font-bold text-[#4A6070] uppercase tracking-widest mb-2">Support</div>
                 
+                @if(auth()->user()->isSuperAdmin())
+                <a href="/admin/users" class="nav-link {{ request()->is('admin/users') ? 'active' : '' }}">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    User Management
+                </a>
+                @endif
                 <a href="/" class="nav-link">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
                     Live Site
                 </a>
+
+                <div class="pt-8 text-[0.6rem] px-4 font-bold text-[#4A6070] uppercase tracking-widest mb-2">High-Level</div>
+                @if(auth()->user()->isSuperAdmin())
+                <a href="/admin/commands" class="nav-link {{ request()->is('admin/commands') ? 'active' : '' }}">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" x2="20" y1="19" y2="19"/></svg>
+                    Terminal
+                </a>
+                @endif
             </nav>
 
             <div class="p-6 border-t border-[#1E3040]">
-                <form action="/admin/logout" method="POST">
+                <form action="/api/auth/logout" method="POST">
                     @csrf
                     <button type="submit" class="w-full nav-link text-red-400 hover:text-red-300">
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" x2="9" y1="12" y2="12"/></svg>

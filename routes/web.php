@@ -125,6 +125,9 @@ Route::middleware('admin')->group(function () {
 
     // System Operations (Require SuperAdmin)
     Route::middleware('superadmin')->group(function () {
+        Route::get('/admin/users', \App\Livewire\Admin\UserManager::class)
+            ->name('admin.users');
+
         Route::post('/api/admin/commands/execute', [CommandsController::class, 'execute'])
             ->name('api.admin.commands.execute');
             
