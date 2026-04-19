@@ -15,12 +15,12 @@
                     class="w-full text-left p-4 rounded-xl border transition-all {{ $selectedSubmission && $selectedSubmission->id == $sub->id ? 'border-[#D31111] bg-[#111F2C]' : 'border-[#1E3040] bg-[#0D1B22] hover:border-[#8BA4B4]' }}"
                 >
                     <div class="flex items-center justify-between mb-1">
-                        <span class="text-xs font-bold {{ $sub->is_read ? 'text-[#8BA4B4]' : 'text-white' }}">{{ $sub->full_name }}</span>
+                        <span class="text-xs font-bold {{ $sub->is_read ? 'text-[#8BA4B4]' : 'text-white' }}">{{ $sub->name }}</span>
                         @if(!$sub->is_read)
                             <span class="w-2 h-2 rounded-full bg-[#D31111]"></span>
                         @endif
                     </div>
-                    <p class="text-[0.65rem] text-[#4A6070] truncate">{{ $sub->subject }}</p>
+                    <p class="text-[0.65rem] text-[#4A6070] truncate">{{ $sub->event_type ?? ucfirst($sub->type) . ' Inquiry' }}</p>
                     <div class="mt-2 text-[0.6rem] text-[#4A6070] font-bold uppercase">{{ $sub->created_at->diffForHumans() }}</div>
                 </button>
             @empty
@@ -45,8 +45,8 @@
                              <span class="text-[0.6rem] font-bold uppercase tracking-widest text-[#D31111] border border-[#D3111140] px-2 py-0.5 rounded">Submission #{{ $selectedSubmission->id }}</span>
                              <span class="text-[0.6rem] font-bold text-[#4A6070] uppercase">{{ $selectedSubmission->created_at->format('M d, Y @ H:i') }}</span>
                         </div>
-                        <h2 class="text-xl font-black text-white mb-1">{{ $selectedSubmission->subject }}</h2>
-                        <p class="text-sm text-[#8BA4B4]">From: <span class="text-white font-semibold">{{ $selectedSubmission->full_name }}</span> <code class="text-[0.7rem] bg-black/30 px-1 rounded">{{ $selectedSubmission->email }}</code></p>
+                        <h2 class="text-xl font-black text-white mb-1">{{ $selectedSubmission->event_type ?? ucfirst($selectedSubmission->type) . ' Inquiry' }}</h2>
+                        <p class="text-sm text-[#8BA4B4]">From: <span class="text-white font-semibold">{{ $selectedSubmission->name }}</span> <code class="text-[0.7rem] bg-black/30 px-1 rounded">{{ $selectedSubmission->email }}</code></p>
                         @if($selectedSubmission->phone)
                             <p class="text-xs text-[#4A6070] mt-1">Phone: {{ $selectedSubmission->phone }}</p>
                         @endif
