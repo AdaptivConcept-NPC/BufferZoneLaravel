@@ -142,9 +142,14 @@
                     <img src="{{ asset(cms('home_about_image', 'assets/images/IMG-20260314-WA0018.jpg')) }}" alt="BufferZone EMS team in action" class="w-full h-[420px] object-cover" />
                 </div>
                 <!-- Floating Stat Card -->
-                <div class="absolute -bottom-6 -right-4 rounded-2xl p-5 z-10 hidden md:block" style="background: #D31111; color: #fff; box-shadow: 0 8px 24px rgba(211,17,17,0.35);">
-                    <p style="font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 2.2rem; line-height: 1;">10+</p>
-                    <p style="font-size: 0.75rem; font-weight: 600; opacity: 0.85; margin-top: 0.25rem;">Years of Professional Experience</p>
+                <div class="absolute -bottom-6 -right-4 rounded-2xl p-5 z-10 hidden md:block border border-white/20" style="background: linear-gradient(135deg, #EE2A2A, #D31111); color: #fff; box-shadow: 0 12px 32px rgba(211,17,17,0.45);">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-white/25 flex items-center justify-center backdrop-blur-md shadow-inner">
+                            <i class="fas fa-check text-white text-lg drop-shadow-sm"></i>
+                        </div>
+                        <p style="font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 2.4rem; line-height: 1; text-shadow: 0 2px 10px rgba(0,0,0,0.1);">10+</p>
+                    </div>
+                    <p style="font-size: 0.75rem; font-weight: 700; opacity: 0.95; margin-top: 0.75rem; letter-spacing: 0.5px;" class="uppercase">Years of Professional <br/>EMS Experience</p>
                 </div>
             </div>
 
