@@ -91,9 +91,9 @@ Route::post('/api/auth/login', [AuthController::class, 'login'])
 Route::get('/api/auth/verify', [AuthController::class, 'verify'])
     ->name('api.auth.verify');
 
-Route::post('/api/auth/logout', [AuthController::class, 'logout'])
+Route::any('/admin/logout', [AuthController::class, 'logout'])
     ->middleware('admin')
-    ->name('api.auth.logout');
+    ->name('admin.logout');
 
 // Admin Root Redirect
 Route::get('/admin', function () {
@@ -102,10 +102,15 @@ Route::get('/admin', function () {
 
 // Protected Admin Routes (Single Middleware Group)
 Route::middleware('admin')->group(function () {
-    // Admin Dashboard
+    // Admin Dashboard (Minimal KPI)
     Route::get('/admin/dashboard', function () {
         return view('admin.dashboard');
     })->name('admin.dashboard');
+
+    // Command Center (High-Level Tools)
+    Route::get('/admin/command-center', function () {
+        return view('admin.command_center');
+    })->name('admin.command_center');
 
     // Commands Dashboard
     Route::get('/admin/commands', [CommandsController::class, 'dashboard'])

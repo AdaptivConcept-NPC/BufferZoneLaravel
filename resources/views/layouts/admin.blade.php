@@ -78,6 +78,10 @@
 
                 <div class="pt-8 text-[0.6rem] px-4 font-bold text-[#4A6070] uppercase tracking-widest mb-2">High-Level</div>
                 @if(auth()->user()->isSuperAdmin())
+                <a href="/admin/command-center" class="nav-link {{ request()->is('admin/command-center') ? 'active' : '' }}">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                    Command Center
+                </a>
                 <a href="/admin/commands" class="nav-link {{ request()->is('admin/commands') ? 'active' : '' }}">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" x2="20" y1="19" y2="19"/></svg>
                     Terminal
@@ -86,7 +90,7 @@
             </nav>
 
             <div class="p-6 border-t border-[#1E3040]">
-                <form action="/api/auth/logout" method="POST">
+                <form action="/admin/logout" method="POST">
                     @csrf
                     <button type="submit" class="w-full nav-link text-red-400 hover:text-red-300">
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" x2="9" y1="12" y2="12"/></svg>
